@@ -6,7 +6,7 @@
         <div class="col-md-12 col-lg-4">
           <div class="footer-logo">
 
-            <a class="navbar-brand" href="#">eStartup</a>
+            <a class="navbar-brand" href="#">NF Compuer</a>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
 
           </div>
@@ -77,7 +77,7 @@
 
     <div class="copyrights">
       <div class="container">
-        <p>&copy; Copyrights eStartup. All rights reserved.</p>
+        <p>&copy; Copyrights Kelompok 5 MSIB Batch 4. All rights reserved.</p>
         <div class="credits">
           <!--
           All the links in the footer should remain intact.
