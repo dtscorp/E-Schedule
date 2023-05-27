@@ -1,4 +1,4 @@
-  <!-- ======= Hero Section ======= -->
+  <!-- ======= Hero Section ======= --></br>
   <section id="hero">
     <div class="hero-container" data-aos="fade-in">
       <h1>Welcome to eStartup</h1>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>eStartup Bootstrap Template - Index</title>
+  <title>NF COMPUTER</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,8 +36,9 @@
 </head>
 
 <body>
-@include('layout.header')
-@include('layout.hero')
+<div>@include('layout.header')</div></br>
+
+<div>@include('layout.hero')</div>
 
   <main id="main">
 
@@ -203,45 +204,6 @@
         </div>
       </div>
     </section><!-- End Features Section -->
-
-    <!-- ======= Screenshots Section ======= -->
-    <section id="screenshots" class="padd-section text-center">
-
-      <div class="container" data-aos="fade-up">
-        <div class="section-title text-center">
-          <h2>App Gallery</h2>
-          <p class="separator">Integer cursus bibendum augue ac cursus .</p>
-        </div>
-
-        <div class="screens-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/screen/1.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/screen/2.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/screen/3.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/screen/4.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/screen/5.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/screen/6.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/screen/7.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/screen/8.jpg" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-    </section><!-- End Screenshots Section -->
-
-    <!-- ======= Video Section ======= -->
-    <section id="video" class="text-center">
-      <div class="overlay">
-        <div class="container-fluid container-full" data-aos="zoom-in">
-
-          <div class="row">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q&feature=emb_title" class="glightbox play-btn"></a>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- End Video Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="padd-section text-center">
