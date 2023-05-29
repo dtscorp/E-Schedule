@@ -12,7 +12,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// admin
+
+Route::get('/home', function () {
+    return view('admin.home');
+});
+
+// user
 
 Route::get('/', function () {
-    return view('admin.index');
+    return view('users.home');
 });

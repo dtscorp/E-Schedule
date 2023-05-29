@@ -50,7 +50,6 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[Lendio](https://lendio.com)**
 
 ## Contributing
-//coba coba
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
@@ -65,5 +64,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-hiii
