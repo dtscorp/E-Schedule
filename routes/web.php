@@ -15,8 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
     return view('admin.home');
-});
-
-Route::get('/', function () {
-    return view('layout.index');
-});
+}); main
