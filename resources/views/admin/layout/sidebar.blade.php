@@ -21,7 +21,7 @@
             <a class="sidebar-link" href="{{route('jadwal.index')}}" aria-expanded="false">
 
               <span>
-                <i class="ti ti-layout-dashboard"></i>
+              <i class="fa-solid fa-calendar-days"></i>
               </span>
               <span class="hide-menu">Jadwal Kelas</span>
             </a>
@@ -33,7 +33,7 @@
           <li class="sidebar-item">
             <a class="sidebar-link" href="{{route('kategori.index')}}" aria-expanded="false">
               <span>
-                <i class="ti ti-article"></i>
+              <i class="fa-regular fa-rectangle-list"></i>
               </span>
               <span class="hide-menu">Kategori Kelas</span>
             </a>
@@ -41,15 +41,15 @@
           <li class="sidebar-item">
             <a class="sidebar-link" href="{{route('materi.index')}}" aria-expanded="false">
               <span>
-                <i class="ti ti-alert-circle"></i>
+              <i class="fa-sharp fa-solid fa-book"></i>
               </span>
               <span class="hide-menu">Materi Pelajaran</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('pengajar.index')}}" aria-expanded="false">
+            <a class="sidebar-link" href="#" aria-expanded="false">
               <span>
-                <i class="ti ti-cards"></i>
+              <i class="fa-sharp fa-solid fa-user-tie"></i>
               </span>
               <span class="hide-menu">Pengajar</span>
             </a>
@@ -57,7 +57,7 @@
           <li class="sidebar-item">
             <a class="sidebar-link" href="{{route('peserta.index')}}" aria-expanded="false">
               <span>
-                <i class="ti ti-file-description"></i>
+              <i class="fa-solid fa-users"></i>
               </span>
               <span class="hide-menu">Peserta</span>
             </a>
