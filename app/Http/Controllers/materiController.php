@@ -12,7 +12,7 @@ class materiController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
