@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\materiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('admin.home');
 });
-
+Route::resource('kategori',kategoriController::class);
+Route::resource('materi',materiController::class);
 // user
 
 Route::get('/', function () {

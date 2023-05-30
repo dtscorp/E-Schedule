@@ -29,7 +29,7 @@
             <span class="hide-menu">Master Data</span>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('kategori.index')}}" aria-expanded="false">
               <span>
                 <i class="ti ti-article"></i>
               </span>
@@ -37,7 +37,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('kategori.index')}}" aria-expanded="false">
               <span>
                 <i class="ti ti-alert-circle"></i>
               </span>
