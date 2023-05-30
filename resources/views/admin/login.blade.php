@@ -1,4 +1,4 @@
-@extends('admin.index')
+@extends('admin.layout.index')
 @section('content')
 <section class="vh-100">
     <div class="container py-5 h-100">
