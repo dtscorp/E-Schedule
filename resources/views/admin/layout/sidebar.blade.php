@@ -37,7 +37,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('kategori.index')}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('materi.index')}}" aria-expanded="false">
               <span>
                 <i class="ti ti-alert-circle"></i>
               </span>
