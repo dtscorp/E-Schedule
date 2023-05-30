@@ -26,11 +26,17 @@ Route::get('/home', function () {
 
 Route::resource('kategori',kategoriController::class);
 Route::resource('materi',materiController::class);
-Route::resource('jadwal',jadwalController::class);
 Route::resource('peserta',pesertaController::class);
+Route::resource('pengajar',pengajarController::class);
+Route::resource('/jadwal',jadwalController::class);
 // user
 Route::get('/', function () {
     return view('admin.login');
 
 });
+Route::get('/edit', function () {
+    return view('admin.pengajar.edit');
+
+});
+
 

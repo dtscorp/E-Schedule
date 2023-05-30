@@ -17,7 +17,9 @@
             <span class="hide-menu">Home</span>
           </li>
           <li class="sidebar-item">
+
             <a class="sidebar-link" href="{{route('jadwal.index')}}" aria-expanded="false">
+
               <span>
               <i class="fa-solid fa-calendar-days"></i>
               </span>

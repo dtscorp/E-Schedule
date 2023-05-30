@@ -1,5 +1,5 @@
 @extends('admin.layout.index')
-@section('content');        
+@section('content')
         <div class="card w-100">
               <div class="card-body p-4">
                 <a href="{{route('kategori.create')}}" class="btn btn-success">Tambah Data</a>
@@ -28,7 +28,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @php 
+                        @php
                         $no = 1;
                         @endphp
                         @foreach($kategori as $data)
@@ -39,7 +39,7 @@
                             <form action="{{route('kategori.destroy',$data->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="alert('anda yakin ingin menghapus data ini?')">   
+                            <button type="submit" class="btn btn-danger" onclick="alert('anda yakin ingin menghapus data ini?')">
                                 <i class="ti ti-trash"></i>
                             </button>
                             </form>
@@ -48,7 +48,7 @@
                             </a>
                         </td>
                       </tr>
-                      @endforeach                       
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

@@ -1,77 +1,41 @@
 @extends('admin.layout.index')
-@section('content');        
-        <div class="card w-100">
-              <div class="card-body p-4">
-                <a href="{{route('kategori.create')}}" class="btn btn-success">Tambah Data</a>
-                <br>
-                <br>
-                @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                <p>{{ $message }}</p>
-                </div>
-                @endif
-                <br>
-                <h5 class="card-title fw-semibold mb-4">Daftar Pengajar</h5>
-                <div class="table-responsive">
-                  <table class="table text-nowrap mb-0 align-middle">
-                    <thead class="text-dark fs-4">
-                      <tr>
-                        <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">No</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">NIP</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Nama</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Gender</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">telp</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">email</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Foto</h6>
-                        </th>
-                        <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Action</h6>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @php 
-                        $no = 1;
-                        @endphp
-                        @foreach($pengajar as $data)
-                      <tr>
-                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{$no++}}</h6></td>
-                        <td class="border-bottom-0">{{$data->nip}}</td>
-                        <td class="border-bottom-0">{{$data->nama}}</td>
-                        <td class="border-bottom-0">{{$data->telp}}</td>
-                        <td class="border-bottom-0">{{$data->email}}</td>
-                        <td class="border-bottom-0">{{$data->alamat}}</td>
-                        <td class="border-bottom-0">{{$data->foto}}</td>
-                        <td >
-                            <form action="{{route('pengajar.destroy',$data->id)}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="alert('anda yakin ingin menghapus data ini?')">   
-                                <i class="ti ti-trash"></i>
-                            </button>
-                            </form>
-                            <a href="{{route('pengajar.edit',$data->id)}}" class="btn btn-warning">
+@section('content')
+<h3>Daftar Pengajar</h3></br>
+<a href="{{route('pengajar.create')}}" class="btn btn-info">Tambah Data</a></br></br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach ($pengajar as $data)
+            <div class="col">
+                <div class="card h-100">
+                    @empty($data->foto)
+                    <img src="{{asset('admin/assets/images/nophoto.jpg')}}" class="card-img-top" alt="...">
+                    @else
+                    <img src="{{asset('admin/assets/images')}}/{{$data->foto}}" class="card-img-top" alt="{{$data->foto}}">
+                    @endempty
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $data->nama }}</h5>
+                        <p class="card-text">NIP : {{$data->nip}}</p>
+                        <p class="card-text">Gender : {{$data->gender}}</p>
+                        <p class="card-text">No HP : {{$data->telp}}</p>
+                        <p class="card-text">Email : {{$data->email}}</p>
+                        <p class="card-text">Alamat : {{$data->alamat}}</p>
+                    </div>
+                    <td>
+                        <form method="POST" action="{{ route('pengajar.destroy',$data->id) }}">
+                          @csrf
+                          @method('DELETE')
+                          <a class="btn btn-warning" href="{{ route('pengajar.edit',$data->id) }}" title="ubah">
                             <i class="ti ti-pencil"></i>
-                            </a>
-                        </td>
-                      </tr>
-                      @endforeach                       
-                    </tbody>
-                  </table>
+                          </a>
+                          <!-- hapus data -->
+                          <button class="btn btn-danger" type="submit" title="Hapus"
+                          name="proses" value="hapus"
+                          onclick="return confirm('Anda Yakin Data Dihapus?')">
+                          <i class="ti ti-trash"></i>
+                        </button>
+                      </form>
+                    </td>
                 </div>
-              </div>
             </div>
+        @endforeach
+    </div>
 @endsection
