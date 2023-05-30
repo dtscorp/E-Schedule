@@ -4,6 +4,7 @@ use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\materiController;
 use App\Http\Controllers\PengajarController;
 use App\Http\Controllers\jadwalController;
+use App\Http\Controllers\pesertaController;
 use Illuminate\Support\Facades\Route;
 
 /*
