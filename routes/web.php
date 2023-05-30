@@ -22,9 +22,11 @@ Route::get('/home', function () {
     return view('admin.home');
 });
 
+
 Route::resource('kategori',kategoriController::class);
 Route::resource('materi',materiController::class);
-Route::resource('/jadwal',jadwalController::class);
+Route::resource('jadwal',jadwalController::class);
+Route::resource('peserta',pesertaController::class);
 // user
 Route::get('/', function () {
     return view('admin.login');

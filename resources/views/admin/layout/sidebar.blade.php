@@ -45,7 +45,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('pengajar.index')}}" aria-expanded="false">
+            <a class="sidebar-link" href="#" aria-expanded="false">
               <span>
                 <i class="ti ti-cards"></i>
               </span>
@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('peserta.index')}}'" aria-expanded="false">
               <span>
                 <i class="ti ti-file-description"></i>
               </span>
