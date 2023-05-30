@@ -44,7 +44,7 @@ class PengajarController extends Controller
     }
     public function edit(string $id)
     {
-        $pengajar= Pengajar::find($id);
+        $Pengajar= Pengajar::find($id);
         return view('admin.pengajar.edit', compact('pengajar'));
     }
 

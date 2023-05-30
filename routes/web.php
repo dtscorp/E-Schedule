@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\materiController;
-use App\Http\Controllers\pengajarController;
+use App\Http\Controllers\PengajarController;
+use App\Http\Controllers\jadwalController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +26,8 @@ Route::get('/home', function () {
 Route::resource('kategori',kategoriController::class);
 Route::resource('materi',materiController::class);
 Route::resource('pengajar',pengajarController::class);
+
+Route::resource('/jadwal',jadwalController::class);
 // user
 Route::get('/', function () {
     return view('admin.login');
