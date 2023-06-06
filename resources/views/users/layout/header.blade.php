@@ -15,7 +15,7 @@
         <li><a class="nav-link scrollto" href="#features">Program</a></li>
         <li><a class="nav-link scrollto" href="#testimonials">Testimoni</a></li>
         <li><a class="nav-link scrollto" href="#team">Team</a></li>
-        <li><a class="nav-link scrollto" href="#pricing">Masuk</a></li>
+        <li><a class="nav-link scrollto" href="{{url('/login')}}">Masuk</a></li>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
 

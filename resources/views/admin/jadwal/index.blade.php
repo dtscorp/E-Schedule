@@ -1,8 +1,10 @@
 @extends('admin.layout.index')
-@section('content');        
+@section('content')        
         <div class="card w-100">
               <div class="card-body p-4">
-                <a href="{{route('jadwal.create')}}" class="btn btn-success">Tambah Data</a>
+                <a href="{{route('jadwal.create')}}" class="btn btn-primary"><i class="ti ti-plus"></i></a>
+                <a href="{{url('jadwal-PDF')}}" class="btn btn-success"><i class="ti ti-file"></i></a>
+                <a href="{{url('surat-tugas')}}" class="btn btn-success"><i class="ti ti-pencil"></i></a>
                 <br>
                 <br>
                 @if ($message = Session::get('success'))
@@ -26,7 +28,13 @@
                           <h6 class="fw-semibold mb-0">Kelas</h6>
                         </th>
                         <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Peserta</h6>
+                        </th>
+                        <th class="border-bottom-0">
                           <h6 class="fw-semibold mb-0">Materi</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Pengajar</h6>
                         </th>
                         <th class="border-bottom-0">
                           <h6 class="fw-semibold mb-0">Jam Masuk</h6>
@@ -48,7 +56,9 @@
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{$no++}}</h6></td>
                         <td class="border-bottom-0">{{$data->kode_kelas}}</td>
                         <td class="border-bottom-0">{{$data->kelas}}</td>
+                        <td class="border-bottom-0">{{$data->peserta}}</td>
                         <td class="border-bottom-0">{{$data->materi}}</td>
+                        <td class="border-bottom-0">{{$data->pengajar}}</td>
                         <td class="border-bottom-0">{{$data->jam_masuk}}</td>
                         <td class="border-bottom-0">{{$data->jam_keluar}}</td>
                         <td >

@@ -23,15 +23,21 @@ Route::get('/home', function () {
     return view('admin.home');
 });
 
+Route::get('/login', function () {
+    return view('admin.login');
+});
+
 
 Route::resource('kategori',kategoriController::class);
 Route::resource('materi',materiController::class);
 Route::resource('peserta',pesertaController::class);
 Route::resource('pengajar',pengajarController::class);
 Route::resource('/jadwal',jadwalController::class);
+Route::get('jadwal-PDF',[jadwalController::class,'jadwalPDF']);
+Route::get('surat-tugas',[jadwalController::class,'pengajarPDF']);
 // user
 Route::get('/', function () {
-    return view('admin.login');
+    return view('users.layout.index');
 
 });
 Route::get('/edit', function () {

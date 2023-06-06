@@ -55,7 +55,11 @@
                         <td class="border-bottom-0">{{$dbpeserta->telp}}</td>
                         <td class="border-bottom-0">{{$dbpeserta->email}}</td>
                         <td class="border-bottom-0">{{$dbpeserta->alamat}}</td>
-                        <td class="border-bottom-0">{{$dbpeserta->foto}}</td>
+                        <td class="border-bottom-0">@empty($data->foto)
+                    <img src="{{asset('admin/assets/images/nophoto.jpg')}}" class="card-img-top" alt="...">
+                    @else
+                    <img src="{{asset('admin/assets/images')}}/{{$data->foto}}" class="card-img-top" alt="{{$data->foto}}">
+                    @endempty</td>
                         <td >
                             <form action="{{route('peserta.destroy',$dbpeserta->id)}}" method="POST">
                             @csrf
