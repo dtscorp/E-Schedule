@@ -47,7 +47,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('pengajar.index')}}" aria-expanded="false">
               <span>
               <i class="fa-sharp fa-solid fa-user-tie"></i>
               </span>

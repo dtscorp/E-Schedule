@@ -34,9 +34,6 @@ Route::get('/', function () {
     return view('admin.login');
 
 });
-Route::get('/edit', function () {
-    return view('admin.pengajar.edit');
 
-});
 
 
