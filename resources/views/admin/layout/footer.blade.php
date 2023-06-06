@@ -1,5 +1,11 @@
 <!-- footer -->
-<br>
-<div class="py-6 px-6 text-center">
-          <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">Kelompok 5</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a></p>
+<div id='footer-footer' class="py-6 px-6 text-center">
+<div class="copyrights">
+      <div class="container">
+        <p>&copy; Copyrights E-Schedule. All rights reserved.</p>
+        <div class="credits">
+          Designed by <a href="https://github.com/dtscorp/E-Schedule.git">E-Schedule</a>
         </div>
+      </div>
+    </div>
+</div>

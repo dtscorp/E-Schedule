@@ -9,7 +9,7 @@
                     @empty($data->foto)
                     <img src="{{asset('admin/assets/images/nophoto.jpg')}}" class="card-img-top"  alt="...">
                     @else
-                    <img src="{{asset('admin/assets/images')}}/{{$data->foto}}" class="card-img-top" style="width : 100%; height : 50%" alt="{{$data->foto}}">
+                    <img src="{{asset('admin/assets/images')}}/{{$data->foto}}" class="card-img-top" style="width : 100%; height : 100%" alt="{{$data->foto}}">
                     @endempty
                     <div class="card-body">
                         <h5 class="card-title">{{ $data->nama }}</h5>

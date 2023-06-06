@@ -9,39 +9,47 @@
         </ul>
     </div>
 @endif
-<div class="card">
-<div class="card-body">
-    <h2>Form Create Peserta</h2>
-    <form method="POST" action="{{route('peserta.store')}}">
-        @csrf
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Nama</label>
-        <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-floating mb-3">
-            Gender <br>
-            <input name="gender" value="l" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> L <br>
-            <input name="gender" value="p" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> P
-            <div class="invalid-feedback" data-sb-feedback="telp:required">Gender is required.</div>
+<div class="container px-5 my-5">
+<h2 id='creH2'>Form Create Peserta</h2>
+    <form id="contactForm" method="POST" action="{{route('peserta.store')}}" data-sb-form-api-token="API_TOKEN">
+    @csrf
+        <div class="form-floating mb-3">
+            <input class="form-control" id="name" name="nama" type="text" placeholder="name" data-sb-validations="required" />
+            <label for="name">name</label>
+            <div class="invalid-feedback" data-sb-feedback="name:required">name is required.</div>
         </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">telp</label>
-        <input type="text" name="telp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">email</label>
-        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">alamat</label>
-        <textarea class='form-control' name="alamat" id="" cols="30" rows="10"></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">foto</label>
-        <input type="file" name="foto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mb-3">
+            <label id="gender" class="form-label d-block">gender</label>
+            <div class="form-check form-check-inline">
+            <input id='inp-gender' name="gender" value="l" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> L 
+            <input id='inp-gender' name="gender" value="p" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> P
+                <label class="form-check-label" for="option"></label>
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="telephone" name="telp" type="text" placeholder="telephone" data-sb-validations="required" />
+            <label for="telephone">telephone</label>
+            <div class="invalid-feedback" data-sb-feedback="telephone:required">telephone is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="email" type="email" name="email" placeholder="email" data-sb-validations="required,email" />
+            <label for="email">email</label>
+            <div class="invalid-feedback" data-sb-feedback="email:required">email is required.</div>
+            <div class="invalid-feedback" data-sb-feedback="email:email">email Email is not valid.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="address" type="text" name="alamat" placeholder="Address" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <label for="address">Address</label>
+            <div class="invalid-feedback" data-sb-feedback="address:required">Address is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="photo" value='' type="file" name="foto" placeholder="photo" data-sb-validations="required" />
+            <label for="foto">photo</label>
+            <div class="invalid-feedback" data-sb-feedback="photo:required">photo is required.</div>
+        </div>
+            <button id='tbn-prst' class="btn btn-success btn-lg" name='proses' id="submit" value='submit' type="submit">Create</button>
+            <a href="{{ url('/peserta') }}" id='tbn-ccncl' class="btn btn-warning btn-lg">Cancel</a>
     </form>
 </div>
-</div>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 @endsection
