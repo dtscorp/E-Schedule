@@ -35,8 +35,8 @@ class pesertaController extends Controller
             'gender' => 'required',
             'telp' => 'required|max:15|min:10',
             'email' => 'required|max:45|unique:peserta',
-            'alamat' => 'required'
-            //'foto' => 'required|max:45'
+            'alamat' => 'required',
+            'foto' => 'required'
         ],
         //custom pesan errornya
         [
@@ -49,7 +49,8 @@ class pesertaController extends Controller
             'email.required'=>'Email Wajib Diisi',
             'email.max'=>'Maksimal 45 Karakter',
             'email.unique'=>'Email Telah digunakan',
-            'alamat.required'=>'alamat Wajib Diisi'
+            'alamat.required'=>'alamat Wajib Diisi',
+            'foto.required' =>'Foto Wajib Diisi'
         ]
         );
         Peserta::create($request->all());
@@ -62,7 +63,8 @@ class pesertaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $pesert = Peserta::find($id);
+        return view('admin.peserta.view',compact('pesert'));
     }
 
     /**
@@ -70,7 +72,8 @@ class pesertaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $peserta= Peserta::find($id);
+        return view('admin.peserta.edit', compact('peserta'));
     }
 
     /**
@@ -78,7 +81,34 @@ class pesertaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required|max:45',
+            'gender' => 'required',
+            'telp' => 'required|max:15|min:10',
+            'email' => 'required|max:45',
+            'alamat' => 'required',
+            'foto' => 'required'
+        ],
+        //custom pesan errornya
+        [
+            'nama.required'=>'Nama Wajib Diisi',
+            'gender.required' => 'Gender Wajib Diisi',
+            'telp.required' => 'Telp Wajib Diisi',
+            'email.required' => 'Email Wajib Diisi',
+            'alamat.required' => 'Alamat Wajib Diisi',
+            'foto.required' => 'Foto Wajib Diisi'
+        ]);
+        
+        $peserta = Peserta::find($id);
+        $peserta->nama = $request->nama;
+        $peserta->gender = $request->gender;
+        $peserta->telp = $request->telp;
+        $peserta->email = $request->email;
+        $peserta->alamat = $request->alamat;
+        $peserta->foto = $request->foto;
+        $peserta->save();
+        return redirect()->route('peserta.index')
+        ->with('success','Data Peserta Baru Berhasil Disimpan');
     }
 
     /**
@@ -86,6 +116,8 @@ class pesertaController extends Controller
      */
     public function destroy(string $id)
     {
+        $dbpeserta = Peserta::find($id);
+        if(!empty($dbpeserta->foto)) unlink('admin/assets/images/'.$dbpeserta->foto);
         Peserta::where('id',$id)->delete();
         return redirect()->route('peserta.index')
                         ->with('success','Data Peserta Berhasil Dihapus');

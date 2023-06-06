@@ -1,12 +1,12 @@
-  <!-- ======= Footer ======= -->
-  <footer class="footer">
+    <!-- ======= Footer ======= -->
+<footer class="footer">
     <div class="container">
       <div class="row">
 
         <div class="col-md-12 col-lg-4">
           <div class="footer-logo">
 
-            <a class="navbar-brand" href="#">NF Compuer</a>
+            <a class="navbar-brand" href="#">E-Schedule</a>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
 
           </div>
@@ -77,17 +77,11 @@
 
     <div class="copyrights">
       <div class="container">
-        <p>&copy; Copyrights Kelompok 5 MSIB Batch 4. All rights reserved.</p>
+        <p>&copy; Copyrights E-Schedule. All rights reserved.</p>
         <div class="credits">
-          <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup
-        -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="https://github.com/dtscorp/E-Schedule.git">E-Schedule</a>
         </div>
       </div>
     </div>
-
-  </footer><!-- End  Footer -->
+</footer>
+    <!-- =======  End  Footer =======  -->

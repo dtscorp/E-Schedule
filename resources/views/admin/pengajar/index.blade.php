@@ -7,9 +7,9 @@
             <div class="col">
                 <div class="card h-100">
                     @empty($data->foto)
-                    <img src="{{asset('admin/assets/images/nophoto.jpg')}}" class="card-img-top" alt="...">
+                    <img src="{{url('admin/assets/images/nophoto.jpg')}}" class="card-img-top" alt="...">
                     @else
-                    <img src="{{asset('admin/assets/images')}}/{{$data->foto}}" class="card-img-top" alt="{{$data->foto}}">
+                    <img src="{{url('admin/assets/images')}}/{{$data->foto}}" class="card-img-top" alt="{{$data->foto}}">
                     @endempty
                     <div class="card-body">
                         <h5 class="card-title">{{ $data->nama }}</h5>

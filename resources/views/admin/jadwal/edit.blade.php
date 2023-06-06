@@ -15,6 +15,7 @@
     @csrf
     @method('PUT')
     <div class="mb-3">
+
         <label for="exampleInputEmail1" class="form-label">Kode Kelas</label>
         <input type="text" name="kode_kelas" value="{{$jadwal->kode_kelas}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
