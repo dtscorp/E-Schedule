@@ -1,14 +1,3 @@
-/**
-* Template Name: eStartup
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   background-color: #fff;
   color: #333;
@@ -151,8 +140,10 @@ span {
 
 #header #logo h1 {
   color: #505050;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: monospace;
+  text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
 }
@@ -161,6 +152,12 @@ span {
   color: #555;
   display: inline-block;
   text-decoration: none;
+  cursor: grabbing;
+  transition: color 2s ease-out 100ms;
+}
+
+#header #logo h1 a:hover{
+  color: #71c55d;
 }
 
 #header #logo h1 a span {
@@ -200,6 +197,11 @@ span {
   position: relative;
 }
 
+#container-HIDA{
+  text-transform: uppercase;
+  cursor: grabbing;
+}
+
 .navbar a,
 .navbar a:focus {
   display: flex;
@@ -207,10 +209,11 @@ span {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-weight: bold;
+  font-size: 14px;
   color: #222;
   white-space: nowrap;
-  transition: 0.3s;
+  transition: color 2s ease-out 100ms;
   letter-spacing: 0;
 }
 
@@ -240,7 +243,7 @@ span {
   visibility: hidden;
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: 0.3s;
+  transition: color 2s ease-out 100ms;
   border-radius: 4px;
 }
 
@@ -447,10 +450,22 @@ span {
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 42px;
+  font-weight: bold;
   line-height: 56px;
-  font-family: "Philosopher", sans-serif;
+  font-style: normal;
+  font-family: "Philosopher";
+  text-transform: uppercase;
+  color: #777;
+  cursor: grabbing;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  transition: color 2s ease-out 100ms;
+}
+
+#hero h1:hover{
   color: #71c55d;
 }
 
@@ -464,9 +479,19 @@ span {
 #hero h2 {
   color: #777;
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: bold;
+  cursor: grabbing;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  transition: color 2s ease-out 100ms;
+}
+
+#hero h2:hover{
+  color: #18d26e;
 }
 
 @media (max-width: 768px) {
@@ -478,8 +503,13 @@ span {
 }
 
 #hero img {
-  max-width: 95%;
+  max-width: 90%;
   margin-bottom: 30px;
+  cursor: no-drop;
+  background-position: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
 }
 
 #hero .btn-get-started {
@@ -494,14 +524,17 @@ span {
   transition: 0.5s;
   margin-bottom: 30px;
   border: 2px solid #71c55d;
-  background: #fff;
+  background-color: #fff;
   color: #71c55d;
   text-decoration: none;
+  transition: color 8s ease-out 100ms;
+  cursor: grabbing;
 }
 
 #hero .btn-get-started:hover {
-  background: #71c55d;
+  background-color: #71c55d;
   color: #fff;
+  transition: background-color 8s ease-out 100ms;
 }
 
 #hero .btns a {
@@ -697,23 +730,37 @@ section {
 --------------------------------*/
 #about-us img {
   max-width: 100%;
+  cursor: no-drop;
 }
 
 #about-us .about-content {
   padding-top: 60px;
+  text-align: justify;
 }
 
 #about-us .about-content h2 {
-  color: #252525;
-  font-family: "roboto";
-  font-size: 39px;
-  font-weight: 100;
+  color: #777;
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+  transition: color 2s ease-out 100ms;
   letter-spacing: 2px;
   margin-bottom: 20px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  text-align: center;
   text-transform: capitalize;
 }
 
+#about-us .about-content h2:hover{
+  color: #18d26e;
+}
+
 #about-us .about-content span {
+  font-family: 'Roboto';
   font-weight: 700;
   padding-right: 10px;
   text-transform: uppercase;
@@ -881,6 +928,7 @@ section {
   overflow: hidden;
   position: relative;
   width: 100%;
+  cursor: grabbing;
 }
 
 @media (max-width: 991px) {
@@ -939,7 +987,7 @@ section {
 
 #team .team-block:hover .team-content {
   bottom: 0px;
-  transition: all 0.5s ease-in-out 0s;
+  transition: all 1.4s ease-in-out 100ms;
 }
 
 /* Testimonials Section
@@ -1256,15 +1304,54 @@ section {
   line-height: 0;
 }
 
+#contact .separator{
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  cursor: grabbing;
+  transition: color 2s ease-out 100ms;
+}
+
+#contact .separator:hover{
+  color: #18d26e;
+}
+
+#contact h2{
+  color: #777;
+  font-size: 30px;
+  margin-top: 20px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+  transition: color 2s ease-out 100ms;
+}
+
+#contact h2:hover{
+  color: #18d26e;
+}
+
 #contact .info p {
   padding: 0 0 10px 50px;
   margin-bottom: 20px;
   line-height: 22px;
-  font-size: 14px;
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+  transition: color 2s ease-out 100ms;
+}
+
+#contact .info p:hover{
+  color: #18d26e;
 }
 
 #contact .info .email p {
   padding-top: 5px;
+  
 }
 
 #contact .social-links {
@@ -1282,7 +1369,8 @@ section {
   text-align: center;
   width: 36px;
   height: 36px;
-  transition: 0.3s;
+  transition: 2s ease-out 100ms;
+  cursor: grabbing;
 }
 
 #contact .social-links a:hover {
@@ -1364,7 +1452,8 @@ section {
   border: 0;
   padding: 10px 24px;
   color: #fff;
-  transition: 0.4s;
+  transition: 2s ease-out 100ms;
+  cursor: grabbing;
 }
 
 #contact .php-email-form button[type=submit]:hover {
@@ -1442,4 +1531,158 @@ section {
 .footer .copyrights .credits a {
   letter-spacing: 0;
   color: #71c55d;
+}
+
+#container-TeM1{
+  background-position: center;
+  background-image: url(../img/newsletter-bg.jpg);
+  cursor: grabbing;
+  margin-top: -6px;
+}
+
+#container-TeM5{
+  margin-top: -16px;
+  background-color: #18d26e;
+  cursor: grabbing;
+}
+
+.container-spa{
+  font-family: 'Roboto';
+  font-weight: bold;
+  cursor: grabbing;
+}
+
+.container-HH4{
+  font-family: 'Roboto';
+  font-weight: bold;
+  cursor: grabbing;
+}
+
+#container-TB{
+  margin-top: 20px;
+}
+
+#container-PTm1{
+  color: #777;
+  margin-top: 20px;
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+  transition: color 2s ease-out 100ms;
+}
+
+#container-PTm1:hover{
+  color: #18d26e;
+}
+
+#container-pd0{
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  transition: color 2s ease-out 100ms;
+  cursor: grabbing;
+}
+
+#container-pd0:hover{
+  color: #18d26e;
+}
+
+#container-KetuA{
+  margin-left: 428px;
+}
+
+#container-secLogin{
+  background-color: #AAC8A7;
+  background-position: center;
+}
+
+#container-ImgLogin{
+  margin-top: 100px;
+  max-width: 250%;
+  margin-left: -140px;
+  cursor: no-drop;
+}
+
+#username::placeholder{
+  font-size: 10px;
+  font-family: 'Roboto';
+  color: #025464;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#password::placeholder{
+  font-size: 10px;
+  font-family: 'Roboto';
+  color: #025464;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#btnLogin{
+  background-color: #025464;
+  color: #f5fbf3;
+  font-size: 12px;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: grabbing;
+  transition: background-color 2s ease-out 100ms;
+}
+
+#btnLogin:hover{
+  background-color: #18d26e;
+  color: #f5fbf3;
+}
+
+#container-spLogin{
+  color: #777;
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+}
+
+#container-APLogin{
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+}
+
+#container-APRegis{
+  color: #18d26e;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+}
+
+#container-cardsss{
+  border-radius: 1rem;
+}
+
+#container-HH5cLogin{
+  letter-spacing: 1px;
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+}
+
+#container-imAbout{
+  max-height: 100%;
+}
+
+#container-DFTeam{
+  margin-top: -60px;
 }

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Modernize Free</title>
-  <link rel="shortcut icon" type="image/png" href="{{asset('admin/assets/images/logos/favicon.png')}}" />
+  <title>E-Schedule</title>
+  <link rel="shortcut icon" type="image/png" href="{{asset('admin/assets/images/logos/logo.png')}}" />
   <link rel="stylesheet" href="{{asset('admin/assets/css/styles.min.css')}}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -15,7 +15,11 @@
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
     <!-- Sidebar Start -->
-    <div> @include('admin.layout.sidebar')</div>
+    <div> 
+      
+        @include('admin.layout.sidebar')
+
+    </div>
     <!--  Sidebar End -->
     
     <!--  Main wrapper -->
@@ -38,6 +42,7 @@
   <script src="{{asset('admin/assets/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
   <script src="{{asset('admin/assets/libs/simplebar/dist/simplebar.js')}}"></script>
   <script src="{{asset('admin/assets/js/dashboard.js')}}"></script>
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6e1b60fb-7351-451f-941c-ab0e266dfa4d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </body>
 
 </html>
