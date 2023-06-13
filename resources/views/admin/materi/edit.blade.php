@@ -26,10 +26,14 @@
         <input type="text" name="nama" class="form-control" value="{{$materi->nama}}" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Kategori</label>
-          <select class="form-control" name="kategori_id" id="">
-            @foreach($kategori as $data)
-            @if($data->id == $materi->kategori_id)
+        <label for="exampleInputEmail1" class="form-label">desk</label>
+        <textarea name="desk" class="form-control" cols="30" rows="10"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Kelas</label>
+          <select class="form-control" name="kelas_id" id="">
+            @foreach($kelas as $data)
+            @if($data->id == $materi->kelas_id)
             <option value="{{$data->id}}" checked>{{$data->nama}}</option>
             @endif
             <option value="{{$data->id}}">{{$data->nama}}</option>

@@ -39,20 +39,28 @@
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span id='contaimner-sideSpan' class="hide-menu">Master Data</span>
           </li>
-          <li class="sidebar-item">
-            <a id='container-sidLink' class="sidebar-link" href="{{route('kategori.index')}}" aria-expanded="false">
+          <!-- <li class="sidebar-item">
+            <a id='container-sidLink' class="sidebar-link" href="" aria-expanded="false">
               <span>
               <i class="fa-regular fa-rectangle-list"></i>
               </span>
-              <span id='container-SPP' class="hide-menu">Kategori Kelas</span>
+              <span id='container-SPP' class="hide-menu">Kategori Materi</span>
             </a>
-          </li>
+          </li> -->
           <li class="sidebar-item">
             <a id='container-sidLink' class="sidebar-link" href="{{route('materi.index')}}" aria-expanded="false">
               <span>
               <i class="fa-sharp fa-solid fa-book-open"></i>
               </span>
               <span id='container-SPP' class="hide-menu">Materi Pelajaran</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a id='container-sidLink' class="sidebar-link" href="{{route('kelas.index')}}" aria-expanded="false">
+              <span>
+              <i class="fa-regular fa-rectangle-list"></i>
+              </span>
+              <span id='container-SPP' class="hide-menu">Kelas</span>
             </a>
           </li>
           <li class="sidebar-item">

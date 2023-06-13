@@ -1,7 +1,6 @@
 @extends('admin.layout.index')
-
 @section('content')        
-        
+@include('sweetalert::alert')
                 <h5 id='container-jadwlH5' class="card-title fw-semibold mb-4">Jadwal Kelas</h5>
                 <div class="card w-100">
               <div class="card-body p-4">
@@ -72,7 +71,7 @@
                             </a>
                             @csrf
                             @method('DELETE')
-                            <button id='container-dlete' type="submit" class="btn" onclick="alert('anda yakin ingin menghapus data ini?')">   
+                            <button id='container-dlete' type="submit" class="btn delete-confirm">   
                                 <i class="ti ti-trash"></i>
                             </button>
                             </form>

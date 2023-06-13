@@ -2,14 +2,12 @@
 @section('content')
         <div class="card w-100">
               <div class="card-body p-4">
-                <a id='container-CratKt' href="{{route('kategori.create')}}" class="btn">Tambah Data</a>
-
                 @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                 <p>{{ $message }}</p>
                 </div>
                 @endif
-                
+                <a id='container-CratKt' href="{{route('kategori.create')}}" class="btn">Tambah Data</a>
                 <h5 id='container-ketgH5' class="card-title fw-semibold mb-4">Data Kategori</h5>
                 <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">

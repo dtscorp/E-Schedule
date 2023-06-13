@@ -10,10 +10,10 @@ class Kategori extends Model
 {
     protected $table = 'kategori';
     protected $fillable = ['nama'];
-    protected $timestamp =['created_at','updated_at'];
+    public $timestamps = false;
 
-    public function materi(): HasMany
-    {
-        return $this->hasMany(Materi::class);
-    }
+    // public function materi(): HasMany
+    // {
+    //     return $this->hasMany(Materi::class);
+    // }
 }

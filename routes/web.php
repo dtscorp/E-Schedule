@@ -4,7 +4,10 @@ use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\materiController;
 use App\Http\Controllers\PengajarController;
 use App\Http\Controllers\jadwalController;
+use App\Http\Controllers\kelasController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\pesertaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,18 +23,13 @@ use Illuminate\Support\Facades\Route;
 
 // ======================= Layout =======================
 
-Route::get('/', function () {
-    return view('users.layout.hero');
-});
+Route::get('/',[LandingPageController::class,'hero']);
+Route::get('/teacher',[LandingPageController::class,'teacher']);
+Route::get('/class',[LandingPageController::class,'kelas']);
 
 
 Route::get('/login', function () {
     return view('admin.login');
-});
-
-
-Route::get('/beranda', function () {
-    return view('users.layout.hero');
 });
 
 Route::get('/about', function () {
@@ -51,11 +49,13 @@ Route::get('/login', function () {
 });
 
 
-Route::resource('kategori',kategoriController::class);
+// Route::resource('kategori',kategoriController::class);
+Route::resource('user',UserController::class);
 Route::resource('materi',materiController::class);
 Route::resource('peserta',pesertaController::class);
 Route::resource('pengajar',pengajarController::class);
 Route::resource('/jadwal',jadwalController::class);
+Route::resource('kelas', kelasController::class);
 
 Route::get('jadwal-PDF',[jadwalController::class,'jadwalPDF']);
 Route::get('surat-tugas',[jadwalController::class,'pengajarPDF']);
@@ -82,3 +82,7 @@ Route::get('/dashboard', function () {
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

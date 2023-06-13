@@ -25,10 +25,14 @@
         <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Kategori</label>
-          <select class="form-control" name="kategori_id" id="">
-            <option value="">Pilih Kategori</option>
-            @foreach($kategori as $data)
+        <label for="exampleInputEmail1" class="form-label">desk</label>
+        <textarea name="desk" class="form-control" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Kelas</label>
+          <select class="form-control" name="kelas_id" id="">
+            <option value="">Pilih Kelas</option>
+            @foreach($kelas as $data)
             <option value="{{$data->id}}">{{$data->nama}}</option>
             @endforeach
           </select>

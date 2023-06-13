@@ -1,5 +1,6 @@
 @extends('admin.layout.index')
 @section('content')
+@include('sweetalert::alert')
 <h3>Daftar Pengajar</h3></br>
 <a href="{{route('pengajar.create')}}" class="btn btn-info">Tambah Data</a></br></br>
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -27,9 +28,8 @@
                             <i class="ti ti-pencil"></i>
                           </a>
                           <!-- hapus data -->
-                          <button class="btn btn-danger" type="submit" title="Hapus"
-                          name="proses" value="hapus"
-                          onclick="return confirm('Anda Yakin Data Dihapus?')">
+                          <button class="btn btn-danger delete-confirm" type="submit" title="Hapus"
+                          name="proses" value="hapus">
                           <i class="ti ti-trash"></i>
                         </button>
                         <input type="hidden" name="idx" value="" />

@@ -8,10 +8,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a id='container-HIDA' class="nav-link scrollto active" href="{{url('/beranda')}}">Home</a></li>
+          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/')}}">Home</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/about')}}">About</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/team')}}">Team</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/contact')}}">Contact</a></li>
+          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/teacher')}}">Teacher</a></li>  
+          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/class')}}">Kelas</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/login')}}">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

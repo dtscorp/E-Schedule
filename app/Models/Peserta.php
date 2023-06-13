@@ -10,7 +10,7 @@ class Peserta extends Model
 {
     protected $table = 'peserta';
     protected $fillable = ['nama', 'gender', 'telp', 'email', 'alamat', 'foto'];
-    protected $timestamp =['created_at','updated_at'];
+    public $timestamps =false;
 
     public function peserta(): HasMany
     {

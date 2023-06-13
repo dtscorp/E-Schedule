@@ -1,15 +1,9 @@
 @extends('admin.layout.index')
 @section('content')
-
+@include('sweetalert::alert')
 <div class="card w-100">
               <div class="card-body p-4">
               <a id='container-CratPeserta' href="{{route('peserta.create')}}" class="btn">Tambah Data</a>
-
-                @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                <p>{{ $message }}</p>
-                </div>
-                @endif
                 
                 <h5 id='container-pesertaH5' class="card-title fw-semibold mb-4">Data Peserta</h5>
                 <div class="table-responsive">
@@ -72,7 +66,7 @@
                             <a id='continer-view' href="{{route('peserta.show',$dbpeserta->id)}}" class="btn">
                             <i class="ti ti-eye"></i>
                             </a>
-                            <button id='container-dlete' type="submit" class="btn" onclick="alert('anda yakin ingin menghapus data ini?')">   
+                            <button id='container-dlete' type="submit" class="btn delete-confirm">   
                                 <i class="ti ti-trash"></i>
                             </button>
                             </form>
