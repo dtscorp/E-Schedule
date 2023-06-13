@@ -19,7 +19,13 @@
                           <h6 id='container-THHH' class="fw-semibold mb-0">No</h6>
                         </th>
                         <th class="border-bottom-0">
+                          <h6 id='container-THHH' class="fw-semibold mb-0">Kode Kelas</h6>
+                        </th>
+                        <th class="border-bottom-0">
                           <h6 id='container-THHH' class="fw-semibold mb-0">nama</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 id='container-THHH' class="fw-semibold mb-0">Deskripsi</h6>
                         </th>
                         <th class="border-bottom-0">
                           <h6 id='container-THHH' class="fw-semibold mb-0">Action</h6>
@@ -33,6 +39,7 @@
                         @foreach($kategori as $data)
                       <tr>
                         <td class="border-bottom-0"><h6 id='container-THHH' class="fw-semibold mb-0">{{$no++}}</h6></td>
+                        <td id='container-THHH' class="border-bottom-0">{{$data->kode_kelas}}</td>
                         <td id='container-THHH' class="border-bottom-0">{{$data->nama}}</td>
                         <td>
                             <form action="{{route('kategori.destroy',$data->id)}}" method="POST">

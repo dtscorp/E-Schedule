@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Kategori extends Model
 {
-    protected $table = 'kategori';
-    protected $fillable = ['nama'];
+    protected $table = 'kelas';
+    protected $fillable = ['kode_kelas','nama','desk'];
     protected $timestamp =['created_at','updated_at'];
 
     public function materi(): HasMany
