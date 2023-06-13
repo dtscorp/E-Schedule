@@ -6,6 +6,7 @@ use App\Http\Controllers\PengajarController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\pesertaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,11 @@ Route::get('/team', function () {
     return view('users.team');
 });
 
+Route::get('/schedule', function () {
+    return view('users.schedule');
+});
+
+
 Route::get('/contact', function () {
     return view('users.contact');
 });
@@ -49,6 +55,7 @@ Route::resource('materi',materiController::class);
 Route::resource('peserta',pesertaController::class);
 Route::resource('pengajar',pengajarController::class);
 Route::resource('/jadwal',jadwalController::class);
+//Route::resource('/dashboard',ChartController::class);
 
 // ======================= Admin =======================
 //Route::get('/', function () {
@@ -59,8 +66,10 @@ Route::resource('/jadwal',jadwalController::class);
     //return view('admin.login');
 //});
 
+//Route::get('/dashboard', [ChartController::class, 'index']);
+
 Route::get('/dashboard', function () {
-    return view('admin.dashboard');
+    return view('admin.dashboard.index');
 });
 
 Route::get('/edit', function () {

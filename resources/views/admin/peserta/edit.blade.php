@@ -12,7 +12,7 @@
 
 <div class="container px-5 my-5">
 <h2 id='creH2'>Form Edit Peserta</h2>
-    <form id="contactForm" method="POST" action="{{route('peserta.update',$peserta->id)}}" data-sb-form-api-token="API_TOKEN">
+    <form id="contactForm" method="POST" action="{{route('peserta.update',$peserta->id)}}" enctype="multipart/form-data" data-sb-form-api-token="API_TOKEN">
     @csrf
     @method('PUT')
         <div class="form-floating mb-3">
@@ -48,7 +48,8 @@
             <label for="photo">photo</label>
             <div class="invalid-feedback" data-sb-feedback="photo:required">photo is required.</div>
         </div>
-            <button id='tbn-prst1' class="btn btn-success btn-lg" id="submitButton" type="submit">Save</button>
+            <button id='tbn-prst1' value='update' name='proses' class="btn btn-success btn-lg" id="submitButton" type="submit">Save</button>
+            <input type="hidden" name="id" value="{{ $peserta->id }}"/>
            <a href="{{ url('/peserta') }}" id='tbn-ccncl1' class="btn btn-warning btn-lg">Batal</a>
     </form>
 </div>

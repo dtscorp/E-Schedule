@@ -59,7 +59,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      *
      * @var int
      */
-    protected $rememberDuration = 5760000;
+    protected $rememberDuration = 576000;
 
     /**
      * The session used by the guard.
@@ -171,10 +171,6 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
 
                 $this->fireLoginEvent($this->user, true);
             }
-        }
-
-        if (is_null($this->user)) {
-            $this->clearUserDataFromStorage();
         }
 
         return $this->user;

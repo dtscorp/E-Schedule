@@ -11,7 +11,7 @@
 @endif
 <div class="container px-5 my-5">
 <h2 id='creH2'>Form Create Peserta</h2>
-    <form id="contactForm" method="POST" action="{{route('peserta.store')}}" data-sb-form-api-token="API_TOKEN">
+    <form id="contactForm" method="POST" action="{{route('peserta.store')}}" enctype="multipart/form-data" data-sb-form-api-token="API_TOKEN">
     @csrf
         <div class="form-floating mb-3">
             <input class="form-control" id="name" name="nama" type="text" placeholder="name" data-sb-validations="required" />
