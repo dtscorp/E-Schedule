@@ -39,7 +39,7 @@
                         <td id='container-THHH' class="border-bottom-0"><h6 id='container-THHH' class="fw-semibold mb-0">{{$no++}}</h6></td>
                         <td id='container-THHH' class="border-bottom-0">{{$data->kode_materi}}</td>
                         <td id='container-THHH' class="border-bottom-0">{{$data->nama}}</td>
-                        <td id='container-THHH' class="border-bottom-0">{{$data->kategori}}</td>
+                        <td id='container-THHH' class="border-bottom-0">{{$data->kelas}}</td>
                         <td>
                             <form action="{{route('materi.destroy',$data->id)}}" method="POST">
                             <a id='continer-editMTT' href="{{route('materi.edit',$data->id)}}" class="btn">

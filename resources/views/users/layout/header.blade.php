@@ -19,5 +19,6 @@
       </nav><!-- .navbar -->
 
     </div>
-</header>
-    <!-- ======= End Header ======= -->
+  </div>
+</header><!-- End Header -->
+

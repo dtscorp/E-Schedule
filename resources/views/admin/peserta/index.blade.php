@@ -48,6 +48,7 @@
                         @endphp
                         @foreach($peserta as $dbpeserta)
                       <tr>
+
                         <td class="border-bottom-0"><h6 id='container-THHH' class="fw-semibold mb-0">{{$no++}}</h6></td>
                         <td id='container-THHH' class="border-bottom-0">{{$dbpeserta->nama}}</td>
                         <td id='container-THHH' class="border-bottom-0">{{$dbpeserta->gender}}</td>
@@ -75,7 +76,6 @@
                                 <i class="ti ti-trash"></i>
                             </button>
                             </form>
-
                         </td>
                       </tr>
                       @endforeach                       

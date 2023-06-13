@@ -15,8 +15,54 @@
     @csrf
     @method('PUT')
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Nama</label>
-        <input type="text" name="nama" value="{{$jadwal->nama}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        <label for="exampleInputEmail1" class="form-label">Kode Kelas</label>
+        <input type="text" name="kode_kelas" value="{{$jadwal->kode_kelas}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Kelas</label>
+        <input type="text" name="kelas" value="{{$jadwal->kelas}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Peserta</label>
+        <select class="form-control" name="peserta_id" id="">
+            @foreach($peserta as $data)
+            @if($data->id == $jadwal->peserta_id)
+            <option value="{{$data->id}}" checked>{{$data->nama}}</option>
+            @endif
+            <option value="{{$data->id}}">{{$data->nama}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Materi</label>
+        <select class="form-control" name="materi_id" id="">
+            @foreach($materi as $data)
+            @if($data->id == $jadwal->materi_id)
+            <option value="{{$data->id}}" checked>{{$data->nama}}</option>
+            @endif
+            <option value="{{$data->id}}">{{$data->nama}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Pengajar</label>
+        <select class="form-control" name="pengajar_id" id="">
+            @foreach($pengajar as $data)
+            @if($data->id == $jadwal->pengajar_id)
+            <option value="{{$data->id}}" checked>{{$data->nama}}</option>
+            @endif
+            <option value="{{$data->id}}">{{$data->nama}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Jam Masuk</label>
+        <input type="time" name="jam_masuk" value="{{$jadwal->jam_masuk}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Jam Keluar</label>
+        <input type="time" name="jam_keluar" value="{{$jadwal->jam_keluar}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>

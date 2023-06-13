@@ -25,6 +25,12 @@ Route::get('/', function () {
     return view('users.layout.hero');
 });
 
+
+Route::get('/login', function () {
+    return view('admin.login');
+});
+
+
 Route::get('/beranda', function () {
     return view('users.layout.hero');
 });
@@ -50,12 +56,24 @@ Route::get('/login', function () {
     return view('users.login');
 });
 
+
 Route::resource('kategori',kategoriController::class);
 Route::resource('materi',materiController::class);
 Route::resource('peserta',pesertaController::class);
 Route::resource('pengajar',pengajarController::class);
 Route::resource('/jadwal',jadwalController::class);
 //Route::resource('/dashboard',ChartController::class);
+
+Route::get('jadwal-PDF',[jadwalController::class,'jadwalPDF']);
+Route::get('surat-tugas',[jadwalController::class,'pengajarPDF']);
+// user
+//Route::get('/', function () {
+  //  return view('users.layout.index');
+
+// });
+
+
+//});
 
 // ======================= Admin =======================
 //Route::get('/', function () {

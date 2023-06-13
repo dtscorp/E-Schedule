@@ -16,8 +16,8 @@ class materiController extends Controller
     {
         // $materi = Materi::all();
         $materi = DB::table('materi')
-                ->join('kategori', 'kategori.id', '=', 'materi.kategori_id')
-                ->select('materi.*', 'kategori.nama as kategori')
+                ->join('kelas', 'kelas.id', '=', 'materi.kelas_id')
+                ->select('materi.*', 'kelas.nama as kelas')
                 ->orderBy('materi.id', 'desc')
                 ->get();
         return view('admin.materi.index', compact('materi'));
@@ -40,7 +40,7 @@ class materiController extends Controller
         $request->validate([
             'kode_materi'=>'required|unique:materi',
             'nama' => 'required|max:45',
-            'kategori_id' => 'required'
+            'kelas_id' => 'required'
         ],
         //custom pesan errornya
         [
@@ -48,7 +48,7 @@ class materiController extends Controller
             'kode_materi.unique'=>'Kode Sudah digunakan',
             'nama.required'=>'Nama Wajib Diisi',
             'nama.max'=>'Maksimal 45 Karakter',
-            'kategori_id.required'=>'Kategori Wajib diisi'
+            'kelas_id.required'=>'Kategori Wajib diisi'
         ]
         );
         Materi::create($request->all());
@@ -71,7 +71,7 @@ class materiController extends Controller
         $request->validate([
             'kode_materi'=>'required|',
             'nama' => 'required|max:45',
-            'kategori_id' => 'required'
+            'kelas_id' => 'required'
         ],
         //custom pesan errornya
         [
@@ -79,13 +79,13 @@ class materiController extends Controller
             'kode_materi.unique'=>'Kode Sudah digunakan',
             'nama.required'=>'Nama Wajib Diisi',
             'nama.max'=>'Maksimal 45 Karakter',
-            'kategori_id.required'=>'Kategori Wajib diisi'
+            'kelas_id.required'=>'Kategori Wajib diisi'
         ]
         );
         $materi = Materi::find($id);
         $materi->kode_materi = $request->kode_materi;
         $materi->nama = $request->nama;
-        $materi->kategori_id = $request->kategori_id;
+        $materi->kelas_id = $request->kelas_id;
         $materi->save();
         return redirect()->route('materi.index')
         ->with('success','Data materi Baru Berhasil Diupdate');
