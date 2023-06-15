@@ -7,6 +7,7 @@ use App\Http\Controllers\PengajarController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\pesertaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,11 @@ Route::get('/about', function () {
 Route::get('/team', function () {
     return view('users.team');
 });
+
+Route::get('/schedule', function () {
+    return view('users.schedule');
+});
+
 
 Route::get('/contact', function () {
     return view('users.contact');
@@ -80,8 +86,9 @@ Route::post('kirim', [KirimEmailController::class, 'kirim']);
     //return view('admin.login');
 //});
 
+
 //Route::get('/dashboard', function () {
   //  return view('admin.dashboard');
 //});
 
-
+//Route::get('/dashboard', [ChartController::class, 'index']);

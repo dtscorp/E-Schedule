@@ -14,6 +14,7 @@
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/beranda')}}">Home</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/about')}}">About</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto active" href="{{url('/team')}}">Team</a></li>
+          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/schedule')}}">schedule</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/contact')}}">Contact</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/login')}}">Login</a></li>
         </ul>
