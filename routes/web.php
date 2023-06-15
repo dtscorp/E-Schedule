@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\materiController;
 use App\Http\Controllers\PengajarController;
@@ -56,9 +57,11 @@ Route::resource('materi',materiController::class);
 Route::resource('peserta',pesertaController::class);
 Route::resource('pengajar',pengajarController::class);
 Route::resource('/jadwal',jadwalController::class);
-
+Route::get('dash',[DashboardController::class,'index']);
 Route::get('jadwal-PDF',[jadwalController::class,'jadwalPDF']);
 Route::get('surat-tugas',[jadwalController::class,'pengajarPDF']);
+Route::get('formemail', [KirimEmailController::class, 'index']);
+Route::post('kirim', [KirimEmailController::class, 'kirim']);
 // user
 //Route::get('/', function () {
   //  return view('users.layout.index');
@@ -77,8 +80,8 @@ Route::get('surat-tugas',[jadwalController::class,'pengajarPDF']);
     //return view('admin.login');
 //});
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
+//Route::get('/dashboard', function () {
+  //  return view('admin.dashboard');
+//});
 
 

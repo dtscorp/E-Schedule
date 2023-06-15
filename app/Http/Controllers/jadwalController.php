@@ -88,6 +88,8 @@ class jadwalController extends Controller
         $jadwal->kelas = $request->kelas;
         $jadwal->jam_masuk = $request->jam_masuk;
         $jadwal->jam_keluar = $request->jam_keluar;
+        $jadwal->tgl_mulai = $request->tgl_mulai;
+        $jadwal->tgl_akhir = $request->tgl_akhir;
         $jadwal->save();
         return redirect()->route('jadwal.index')
         ->with('success','Data jadwal Baru Berhasil Disimpan');

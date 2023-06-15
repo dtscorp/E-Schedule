@@ -83,7 +83,7 @@
                         @endphp
 
                         <td class="border-bottom-0">
-                        <button class="btn {{ ($status == 'Running')? 'btn-success' : 'btn-danger' }}">{{$status}}</button>
+                        <span class="badge {{ ($status == 'Running')? 'bg-success' : 'bg-danger' }} rounded-3 fw-semibold">{{$status}}</span>
                         </td>
                         <td>
                             <form action="{{route('jadwal.destroy',$data->id)}}" method="POST">
