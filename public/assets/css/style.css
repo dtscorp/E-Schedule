@@ -1577,6 +1577,34 @@ section {
   color: #18d26e;
 }
 
+#container-schd{
+  color: #777;
+  margin-top: 90px;
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+  transition: color 2s ease-out 100ms;
+}
+
+#container-schd:hover{
+  color: #18d26e;
+}
+
+#container-scd{
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  transition: color 2s ease-out 100ms;
+  cursor: grabbing;
+}
+
+#container-scd:hover{
+  color: #18d26e;
+}
+
 #container-pd0{
   color: #777;
   font-size: 12px;
@@ -1630,7 +1658,7 @@ section {
   text-transform: uppercase;
   font-weight: bold;
   cursor: grabbing;
-  transition: background-color 2s ease-out 100ms;
+  transition: background-color 6s ease-out 100ms;
 }
 
 #btnLogin:hover{

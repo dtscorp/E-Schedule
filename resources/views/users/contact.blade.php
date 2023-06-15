@@ -1,6 +1,5 @@
 @extends('users.layout.index')
 @section('content')
-<!-- ======= Contact Section ======= -->
 <section id="contact" class="padd-section">
 
 <div class="container" data-aos="fade-up">

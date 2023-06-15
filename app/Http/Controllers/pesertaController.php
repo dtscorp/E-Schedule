@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Peserta;
 use PHPUnit\Framework\TestSize\Known;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class pesertaController extends Controller
@@ -36,7 +36,8 @@ class pesertaController extends Controller
             'telp' => 'required|max:15|min:10',
             'email' => 'required|max:45|unique:peserta',
             'alamat' => 'required',
-            'foto' => 'required'
+            //'foto' => 'required'
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:500'
         ],
         //custom pesan errornya
         [
@@ -50,10 +51,34 @@ class pesertaController extends Controller
             'email.max'=>'Maksimal 45 Karakter',
             'email.unique'=>'Email Telah digunakan',
             'alamat.required'=>'alamat Wajib Diisi',
-            'foto.required' =>'Foto Wajib Diisi'
+            //'foto.required' =>'Foto Wajib Diisi'
+            'foto.min' => 'Ukuran file kurang 2 KB',
+            'foto.max' => 'Ukuran file melebihi 2 MB',
+            'foto.image' => 'File foto bukan gambar',
+            'foto.mimes' => 'File harus jpg,jpeg,png,gif,svg'
         ]
         );
-        Peserta::create($request->all());
+
+        if (!empty($request->foto)) {
+            $fileName = 'peserta_' . $request->email . '.' . $request->foto->extension();
+
+            $request->foto->move(public_path('admin/assets/images'), $fileName);
+        } else {
+            $fileName = '';
+        }
+
+        DB::table('peserta')->insert(
+            [
+                'nama' => $request->nama,
+                'gender' => $request->gender,
+                'telp' => $request->telp,
+                'email' => $request->email,
+                'alamat' => $request->alamat,
+                //'foto' => 'required'
+                'foto' => $fileName
+            ]
+        );
+
         return redirect()->route('peserta.index')
                         ->with('success','Data peserta Baru Berhasil Disimpan');
     }
@@ -87,7 +112,8 @@ class pesertaController extends Controller
             'telp' => 'required|max:15|min:10',
             'email' => 'required|max:45',
             'alamat' => 'required',
-            'foto' => 'required'
+            //'foto' => 'required'
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:500'
         ],
         //custom pesan errornya
         [
@@ -96,17 +122,49 @@ class pesertaController extends Controller
             'telp.required' => 'Telp Wajib Diisi',
             'email.required' => 'Email Wajib Diisi',
             'alamat.required' => 'Alamat Wajib Diisi',
-            'foto.required' => 'Foto Wajib Diisi'
+            //'foto.required' => 'Foto Wajib Diisi'
+            'foto.min' => 'Ukuran file kurang 2 KB',
+            'foto.max' => 'Ukuran file melebihi 2 MB',
+            'foto.image' => 'File foto bukan gambar',
+            'foto.mimes' => 'File harus jpg,jpeg,png,gif,svg'
         ]);
+
+        $foto = DB::table('peserta')->select('foto')->where('id', $id)->get();
+        foreach ($foto as $f) {
+            $namaFileFotoLama = $f->foto;
+        }
+
+        if (!empty($request->foto)) {
+            //jika ada foto lama, hapus foto lamanya terlebih dahulu
+            if (!empty($namaFileFotoLama)) unlink('admin/assets/images/' . $namaFileFotoLama);
+            //lalukan proses ubah foto lama menjadi foto baru
+            $fileName = 'peserta_' . $request->email . '.' . $request->foto->extension();
+            //$fileName = $request->foto->getClientOriginalName();
+            $request->foto->move(public_path('admin/assets/images'), $fileName);
+        } else {
+            $fileName = $namaFileFotoLama;
+        }
+
+        DB::table('peserta')->where('id', $id)->update(
+            [
+                'nama' => $request->nama,
+                'gender' => $request->gender,
+                'telp' => $request->telp,
+                'email' => $request->email,
+                'alamat' => $request->alamat,
+                //'foto' => 'required'
+                'foto' => $fileName
+            ]
+        );
         
-        $peserta = Peserta::find($id);
-        $peserta->nama = $request->nama;
-        $peserta->gender = $request->gender;
-        $peserta->telp = $request->telp;
-        $peserta->email = $request->email;
-        $peserta->alamat = $request->alamat;
-        $peserta->foto = $request->foto;
-        $peserta->save();
+        //$peserta = Peserta::find($id);
+        //$peserta->nama = $request->nama;
+        //$peserta->gender = $request->gender;
+        //$peserta->telp = $request->telp;
+        //$peserta->email = $request->email;
+        //$peserta->alamat = $request->alamat;
+        //$peserta->foto = $request->foto;
+        //$peserta->save();
         return redirect()->route('peserta.index')
         ->with('success','Data Peserta Baru Berhasil Disimpan');
     }
@@ -116,10 +174,11 @@ class pesertaController extends Controller
      */
     public function destroy(string $id)
     {
-        $dbpeserta = Peserta::find($id);
-        if(!empty($dbpeserta->foto)) unlink('admin/assets/images/'.$dbpeserta->foto);
+        $peserta = Peserta::find($id);
+        if(!empty($peserta->foto)) unlink('admin/assets/images/'.$peserta->foto);
         Peserta::where('id',$id)->delete();
         return redirect()->route('peserta.index')
                         ->with('success','Data Peserta Berhasil Dihapus');
     }
+
 }

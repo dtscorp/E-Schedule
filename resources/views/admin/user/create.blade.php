@@ -19,12 +19,12 @@
                 <label for="nama">Nama</label>
                 <div class="invalid-feedback" data-sb-feedback="users:required">Nama is required.</div>
             </div>
-            <div class="form-floating mb-3">
-                <input class="form-control" name="nip" value="" id="nipPengajar" type="text"
+            <!-- <div class="form-floating mb-3">
+                <input class="form-control" name="id_card" value="" id="nipPengajar" type="text"
                     placeholder="NIP Pengajar" data-sb-validations="required" />
                 <label for="nipPengajar">NIP/NIK</label>
                 <div class="invalid-feedback" data-sb-feedback="users:required">NIP/NIK is required.</div>
-            </div>
+            </div> -->
             <div class="form-floating mb-3">
                 <input class="form-control" name="email" value="" id="email" type="text" placeholder="email"
                     data-sb-validations="required" />
@@ -32,11 +32,23 @@
                 <div class="invalid-feedback" data-sb-feedback="email:required">Email is required.</div>
             </div>
             <div class="form-floating mb-3">
-                <input class="form-control" name="password" value="" id="alamat" type="password" placeholder="alamat"
-                    data-sb-validations="required" />
-                <label for="alamat">Password</label>
-                <div class="invalid-feedback" data-sb-feedback="alamat:required">Password is required.</div>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password" autofocus>
+                <label for="alamat">Password</label> 
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>  
+            <div class="form-floating mb-3">
+            <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" autofocus>
+                <label for="alamat">Password Confirmation</label> 
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
             <div class="form-floating mb-3">
                 <select class="form-control" name="pengajar_id" id="">
                     <option value="">Pilih Pengajar</option>
@@ -60,6 +72,15 @@
                     <option value="peserta">Peserta</option>
                     <option value="admin">Administrator</option>
                 </select>
+            </div>
+            <div class="form-control mb-3">
+                <label for="foto">Foto</label>
+                <input type="file" id="foto" name="foto" value="{{ old('foto') }}" class="form-control @error('foto') @enderror" data-sb-validations="required"/>
+                @error('foto')
+                    <div id="validationServer03Feedback" class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
             <button class="btn btn-primary" name="proses" value="simpan" id="simpan" type="submit">Simpan</button>
             <a href="{{ url('/user') }}" class="btn btn-info">Batal</a>

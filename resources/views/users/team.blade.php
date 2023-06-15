@@ -1,6 +1,5 @@
 @extends('users.layout.index')
 @section('content')
- <!-- ======= Team Section ======= -->
  <section id="team" class="padd-section text-center">
 
 <div class="container" data-aos="fade-up">

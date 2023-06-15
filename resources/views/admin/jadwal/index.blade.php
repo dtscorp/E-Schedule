@@ -19,13 +19,13 @@
                     <thead class="text-dark fs-4">
                       <tr>
                         <th class="border-bottom-0">
-                          <h6 id='container-THHH' class="fw-semibold mb-0">No</h6>
+                          <h6 id="fw-semibold mb-0" class="fw-semibold mb-0">No</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 id='container-THHH' class="fw-semibold mb-0">Kode Kelas</h6>
+                          <h6 id="fw-semibold mb-0" class="fw-semibold mb-0">Kode Kelas</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 id='container-THHH' class="fw-semibold mb-0">Kelas</h6>
+                          <h6 id="fw-semibold mb-0" class="fw-semibold mb-0">Kelas</h6>
                         </th>
                         <th class="border-bottom-0">
                           <h6 class="fw-semibold mb-0">Peserta</h6>
@@ -37,30 +37,53 @@
                           <h6 class="fw-semibold mb-0">Pengajar</h6>
                         </th>
                         <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Tanggal Mulai</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Tanggal Berakhir</h6>
+                        </th>
+                        <th class="border-bottom-0">
                           <h6 class="fw-semibold mb-0">Jam Masuk</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 id='container-THHH' class="fw-semibold mb-0">Jam Keluar</h6>
+                          <h6 class="fw-semibold mb-0">Jam Keluar</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 id='container-THHH' class="fw-semibold mb-0">Action</h6>
+                          <h6 class="fw-semibold mb-0">Status</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Action</h6>
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                        @php 
-                        $no = 1;
-                        @endphp
+
+                        
                         @foreach($jadwal as $data)
                       <tr>
-                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{$no++}}</h6></td>
+                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{$loop->iteration}}</h6></td>
                         <td class="border-bottom-0">{{$data->kode_kelas}}</td>
                         <td class="border-bottom-0">{{$data->kelas}}</td>
                         <td class="border-bottom-0">{{$data->peserta}}</td>
                         <td class="border-bottom-0">{{$data->materi}}</td>
                         <td class="border-bottom-0">{{$data->pengajar}}</td>
+                        <td class="border-bottom-0">{{$data->tgl_mulai}}</td>
+                        <td class="border-bottom-0">{{$data->tgl_akhir}}</td>
                         <td class="border-bottom-0">{{$data->jam_masuk}}</td>
                         <td class="border-bottom-0">{{$data->jam_keluar}}</td>
+                        @php 
+                          if(now() < $data->tgl_mulai){
+                            $status = 'Pending';
+                          }elseif(now()->between($data->tgl_mulai,$data->tgl_akhir)){
+                            $status = 'Running';
+                          }else{
+                            $status = 'Done';
+                          }
+                        @endphp
+
+                        <td class="border-bottom-0">
+                        <button class="btn {{ ($status == 'Running')? 'btn-success' : 'btn-danger' }}">{{$status}}</button>
+                        </td>
                         <td>
                             <form action="{{route('jadwal.destroy',$data->id)}}" method="POST">
                             <a id='continer-edit' href="{{route('jadwal.edit',$data->id)}}" class="btn">

@@ -18,7 +18,11 @@
           <li class="nav-item dropdown">
             <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <img src="{{ asset('admin/assets/images/profile/user-1.jpg') }}" alt="" width="35" height="35" class="rounded-circle">
+              @empty(Auth::user()->foto)
+                    <img src="{{asset('admin/assets/images/nophoto.jpg')}}" width="35" height="35" class="rounded-circle">
+                    @else
+                    <img src="asset('admin/assets/images/profile/Auth::user()->foto') }}" width="35" height="35" class="rounded-circle" alt="{{$data->foto}}">
+                    @endempty
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
               <div class="message-body">

@@ -393,3 +393,33 @@
 #canclls{
    cursor: grabbing;
 }
+
+#options-tahun{
+   color: #777;
+   font-size: 12px;
+   font-family: 'Roboto';
+   font-weight: bold;
+   text-transform: uppercase;
+   cursor: grabbing;
+}
+
+#containe-pesgrafik{
+   color: #777;
+   font-size: 14px;
+   font-family: 'Roboto';
+   font-weight: bold;
+   text-transform: uppercase;
+   cursor: grabbing;
+   transition: color 5s ease-out 100ms;
+}
+
+#containe-pesgrafik:hover{
+   color: #18d26e;
+}
+
+.chart-peserta{
+   color: #777;
+   font-family: 'Roboto';
+   font-weight: bold;
+   cursor: grabbing;
+}

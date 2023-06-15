@@ -41,7 +41,8 @@ class materiController extends Controller
         $request->validate([
             'kode_materi'=>'required|unique:materi',
             'nama' => 'required|max:45',
-            'kelas_id' => 'required'
+            'kelas_id' => 'required',
+            'desk' => 'required'
         ],
         //custom pesan errornya
         [
@@ -49,7 +50,8 @@ class materiController extends Controller
             'kode_materi.unique'=>'Kode Sudah digunakan',
             'nama.required'=>'Nama Wajib Diisi',
             'nama.max'=>'Maksimal 45 Karakter',
-            'kelas_id.required'=>'kelas Wajib diisi'
+            'kelas_id.required'=>'kelas Wajib diisi',
+            'desk.required'=>'deskripsi wajib di isi'
         ]
         );
         Materi::create($request->all());
@@ -72,7 +74,8 @@ class materiController extends Controller
         $request->validate([
             'kode_materi'=>'required|',
             'nama' => 'required|max:45',
-            'kelas_id' => 'required'
+            'kelas_id' => 'required',
+            'desk' => 'required'
         ],
         //custom pesan errornya
         [
@@ -80,12 +83,14 @@ class materiController extends Controller
             'kode_materi.unique'=>'Kode Sudah digunakan',
             'nama.required'=>'Nama Wajib Diisi',
             'nama.max'=>'Maksimal 45 Karakter',
-            'kelas_id.required'=>'kelas Wajib diisi'
+            'kelas_id.required'=>'kelas Wajib diisi',
+            'desk.required'=>'deskripsi wajib di isi'
         ]
         );
         $materi = Materi::find($id);
         $materi->kode_materi = $request->kode_materi;
         $materi->nama = $request->nama;
+        $materi->desk = $request->desk;
         $materi->kelas_id = $request->kelas_id;
         $materi->save();
         return redirect()->route('materi.index')

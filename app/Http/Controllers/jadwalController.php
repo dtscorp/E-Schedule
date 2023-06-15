@@ -9,7 +9,7 @@ use App\Models\Materi;
 use App\Models\Pengajar;
 use App\Models\Peserta;
 use PHPUnit\Framework\TestSize\Known;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class jadwalController extends Controller
