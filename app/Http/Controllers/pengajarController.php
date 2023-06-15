@@ -41,6 +41,8 @@ class PengajarController extends Controller
                 'email' => 'required|max:45',
                 'alamat' => 'required|max:70',
                 'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:2048',
+                'desk' => 'required|max:100',
+
             ],
             //custom pesan errornya
             [
@@ -58,6 +60,7 @@ class PengajarController extends Controller
                 'foto.max' => 'Ukuran file melebihi 2 MB',
                 'foto.image' => 'File foto bukan gambar',
                 'foto.mimes' => 'File harus jpg,jpeg,png,gif,svg',
+                'desk.required' => 'Deskripsi Wajib Diisi',
             ]
         );
 
@@ -81,6 +84,7 @@ class PengajarController extends Controller
                 'email' => $request->email,
                 'alamat' => $request->alamat,
                 'foto' => $fileName,
+                'desk' => $request->desk,
                 //'updated_at'=>now(),
             ]
         );
@@ -116,6 +120,7 @@ class PengajarController extends Controller
                 'email' => 'required|max:45',
                 'alamat' => 'required|max:70',
                 'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:2048',
+                'desk' => 'required|max:100',
             ],
             //custom pesan errornya
             [
@@ -133,6 +138,7 @@ class PengajarController extends Controller
                 'foto.max' => 'Ukuran file melebihi 2 MB',
                 'foto.image' => 'File foto bukan gambar',
                 'foto.mimes' => 'File harus jpg,jpeg,png,gif,svg',
+                'desk.required' => 'Deskripsi Wajib Diisi',
             ]
         );
 
@@ -162,7 +168,8 @@ class PengajarController extends Controller
                 'telp' => $request->telp,
                 'email' => $request->email,
                 'alamat' => $request->alamat,
-                'foto' => $request->foto,
+                'foto' => $fileName,
+                'desk' => $request->desk,
                 //'updated_at'=>now(),
             ]
         );

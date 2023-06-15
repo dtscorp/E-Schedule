@@ -50,6 +50,12 @@
             <input class="form-control" name="foto" value="{{$pengajar->foto}}" id="foto" type="file" data-sb-validations="required" />
             <div class="invalid-feedback" data-sb-feedback="foto:required">Foto is required.</div>
         </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" name="desk" value="{{$pengajar->desk}}" id="desk" type="text" placeholder="desk"
+                data-sb-validations="required"></textarea>
+            <label for="desk">Deskripsi</label>
+            <div class="invalid-feedback" data-sb-feedback="desk:required">Deskripsi is required.</div>
+        </div>
         <button class="btn btn-primary" name="proses" value="update" id="update" type="submit">Update</button>
         <input type="hidden" name="id" value="{{ $pengajar->id }}"/>
         <a href="{{ url('/pengajar') }}" class="btn btn-info">Batal</a>
