@@ -26,6 +26,9 @@ Route::get('/', function () {
     return view('users.layout.hero');
 });
 
+Route::get('/detail', function () {
+    return view('admin.pengajar.detail');
+});
 
 Route::get('/login', function () {
     return view('admin.login');
@@ -39,6 +42,7 @@ Route::get('/beranda', function () {
 Route::get('/about', function () {
     return view('users.about');
 });
+
 
 Route::get('/team', function () {
     return view('users.team');

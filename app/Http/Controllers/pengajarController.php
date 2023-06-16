@@ -95,8 +95,8 @@ class PengajarController extends Controller
 
     public function show(string $id)
     {
-        // $pengajar = Pengajar::find($id);
-        // return view('admin.pengajar.index', compact('pengajar'));
+        $pengajar = Pengajar::find($id);
+        return view('admin.pengajar.detail', compact('pengajar'));
     }
 
     public function edit(string $id)
