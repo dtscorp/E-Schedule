@@ -64,6 +64,14 @@
         <label for="exampleInputEmail1" class="form-label">Jam Keluar</label>
         <input type="time" name="jam_keluar" value="{{$jadwal->jam_keluar}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tanggal Mulai</label>
+        <input type="date" name="tgl_mulai" value="{{$jadwal->tgl_mulai}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tanggal Berakhir</label>
+        <input type="date" name="tgl_akhir" value="{{$jadwal->tgl_akhir}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

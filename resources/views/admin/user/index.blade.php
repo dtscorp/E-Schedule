@@ -37,12 +37,12 @@
                         <td id='container-THHH' class="border-bottom-0">{{$data->email}}</td>
                         <td id='container-THHH' class="border-bottom-0">{{$data->role}}</td>
                         <td>
+                          <a id='continer-viewMTT' href="{{route('user.show',$data->id)}}" class="btn">
+                            <i class="ti ti-eye"></i>
+                            </a>
                             <form action="{{route('user.destroy',$data->id)}}" method="POST">
                             <a id='continer-editMTT' href="{{route('user.edit',$data->id)}}" class="btn">
                             <i class="ti ti-pencil"></i>
-                            </a>
-                            <a id='continer-viewMTT' href="{{route('user.edit',$data->id)}}" class="btn">
-                            <i class="ti ti-eye"></i>
                             </a>
                             @csrf
                             @method('DELETE')

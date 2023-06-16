@@ -32,7 +32,7 @@
                 <div class="invalid-feedback" data-sb-feedback="email:required">Email is required.</div>
             </div>
             <div class="form-floating mb-3">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password" autofocus>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password" >
                 <label for="alamat">Password</label> 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
                 @enderror
             </div>  
             <div class="form-floating mb-3">
-            <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" autofocus>
+            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" >
                 <label for="alamat">Password Confirmation</label> 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
                 </select>
             </div>
             <div class="form-floating mb-3">
-                <select class="form-control" name="role" id="">
+                <select class="form-control" name="role_access" id="">
                     <option value="">Pilih Role</option>
                     <option value="pengajar">Pengajar</option>
                     <option value="peserta">Peserta</option>

@@ -78,6 +78,12 @@
                 </div>
             @enderror
         </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" name="desk" value="{{$pengajar->desk}}" id="desk" type="text" placeholder="desk"
+                data-sb-validations="required"></textarea>
+            <label for="desk">Deskripsi</label>
+            <div class="invalid-feedback" data-sb-feedback="desk:required">Deskripsi is required.</div>
+        </div>
         <button class="btn btn-primary" name="proses" value="update" id="update" type="submit">Update</button>
         <input type="hidden" name="id" value="{{ $pengajar->id }}"/>
         <a href="{{ url('/pengajar') }}" class="btn btn-info">Batal</a>

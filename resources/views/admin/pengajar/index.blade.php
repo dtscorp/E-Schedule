@@ -19,6 +19,7 @@
                         <p class="card-text">No HP : {{$data->telp}}</p>
                         <p class="card-text">Email : {{$data->email}}</p>
                         <p class="card-text">Alamat : {{$data->alamat}}</p>
+                        <p class="card-text">Deskripsi : {{$data->desk}}</p>
                     </div>
                     <td>
                         <form align="center" method="POST" action="{{ route('pengajar.destroy',$data->id) }}">
