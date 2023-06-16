@@ -3,19 +3,6 @@
     <!DOCTYPE html>
     <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <meta name="description" content="Source code generated using layoutit.com">
-        <meta name="author" content="LayoutIt!">
-
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-
-    </head>
-
     <body>
 
         <div class="container-fluid">
@@ -40,7 +27,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Change Password</a>
                         </li>
-                    </ul> <hr>
+                    </ul>
+                    <hr>
                     <h4>About</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus error unde deleniti nobis laborum
                         a doloremque, odio placeat, ut, quo illum quae nesciunt temporibus odit repellat facilis dolor
