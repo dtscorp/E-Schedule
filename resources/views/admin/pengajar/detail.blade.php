@@ -14,7 +14,7 @@
                     <img src="{{asset('admin/assets/images/profile/$user->foto') }}" width="35" height="35" class="rounded-circle" alt="{{$data->foto}}">
                     @endempty
                     <h3 align="center">{{$user->name}}</h3>
-                    <p align="center">{{$user->role_access}}</p>
+                    <p align="center">{{$user->role_access}}</pd
                 </div>
 
                 <div class="col-md-8">

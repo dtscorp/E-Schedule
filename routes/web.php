@@ -27,17 +27,15 @@ use GuzzleHttp\Middleware;
 
 // ======================= Layout =======================
 
-
 Route::get('/',[LandingPageController::class,'hero']);
 Route::get('/teacher',[LandingPageController::class,'teacher']);
 Route::get('/class',[LandingPageController::class,'kelas']);
 // Route::get('/', function () {
 //     return view('users.layout.hero');
-// });
 
-Route::get('/detail', function () {
-    return view('admin.pengajar.detail');
-});
+// Route::get('/detail', function () {
+//     return view('admin.pengajar.detail');
+// });
 
 Route::get('/users', function () {
     return "Hai Sist";
