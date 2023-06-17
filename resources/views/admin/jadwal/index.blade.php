@@ -6,8 +6,8 @@
                 <div class="card w-100">
               <div class="card-body p-4">
                 <a href="{{route('jadwal.create')}}" class="btn btn-primary"><i class="ti ti-plus"></i></a>
-                <a href="{{url('jadwal-PDF')}}" class="btn btn-success"><i class="ti ti-file"></i></a>
-                <a href="{{url('surat-tugas')}}" class="btn btn-success"><i class="ti ti-pencil"></i></a>
+                <a href="{{url('jadwal-PDF')}}" class="btn btn-success"><i class="ti ti-file-lambda"></i></a>
+                <a href="{{url('surat-tugas')}}" class="btn btn-danger"><i class="ti ti-file-import"></i></a>
                 <br>
                 <br>
                 @if ($message = Session::get('success'))
@@ -89,9 +89,6 @@
                             <form action="{{route('jadwal.destroy',$data->id)}}" method="POST">
                             <a id='continer-edit' href="{{route('jadwal.edit',$data->id)}}" class="btn">
                             <i class="ti ti-pencil"></i>
-                            </a>
-                            <a id='continer-view' href="{{route('jadwal.edit',$data->id)}}" class="btn">
-                            <i class="ti ti-eye"></i>
                             </a>
                             @csrf
                             @method('DELETE')

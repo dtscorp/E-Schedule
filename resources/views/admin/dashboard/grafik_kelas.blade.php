@@ -16,7 +16,7 @@
         </div>
 
         <div class="card-body">
-          <h5 class="card-title">Peserta <span>| This Month</span></h5>
+          <h5 class="card-title">Kelas <span>| This Month</span> </h5>
 
           <div class="d-flex align-items-center">
             <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -24,11 +24,11 @@
             </div>
             <div class="ps-3">
               <h6>
-              @foreach($jml_peserta as $jml) 
+              @foreach($jml_kelas as $jml) 
               {{ $jml->jumlah }} 
               @endforeach
               </h6>
-              <span class="text-success small pt-1 fw-bold">Peserta</span>
+              <span class="text-success small pt-1 fw-bold">Pengajar</span>
 
             </div>
           </div>
