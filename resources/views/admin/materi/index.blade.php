@@ -1,13 +1,9 @@
 @extends('admin.layout.index')
-@section('content')  
+@section('content')
+@include('sweetalert::alert')
         <div class="card w-100">
               <div class="card-body p-4">
                 <a id='container-CratMT' href="{{route('materi.create')}}" class="btn btn-success">Tambah Data</a>
-                @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                <p>{{ $message }}</p>
-                </div>
-                @endif
                 <h5 id='container-mterH5' class="card-title fw-semibold mb-4">Data Materi</h5>
                 <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">
@@ -23,7 +19,7 @@
                           <h6 id='container-THHH' class="fw-semibold mb-0">Materi</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 id='container-THHH' class="fw-semibold mb-0">Kategori</h6>
+                          <h6 id='container-THHH' class="fw-semibold mb-0">Kelas</h6>
                         </th>
                         <th class="border-bottom-0">
                           <h6 id='container-THHH' class="fw-semibold mb-0">Action</h6>
@@ -50,7 +46,7 @@
                             </a>
                             @csrf
                             @method('DELETE')
-                            <button id='continer-dtelwMTT' type="submit" class="btn" onclick="alert('anda yakin ingin menghapus data ini?')">   
+                            <button id='continer-dtelwMTT' type="submit" class="btn delete-confirm" >   
                                 <i class="ti ti-trash"></i>
                             </button>
                             </form>

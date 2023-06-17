@@ -36,7 +36,6 @@ class pesertaController extends Controller
             'telp' => 'required|max:15|min:10',
             'email' => 'required|max:45|unique:peserta',
             'alamat' => 'required',
-            //'foto' => 'required'
             'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:500'
         ],
         //custom pesan errornya

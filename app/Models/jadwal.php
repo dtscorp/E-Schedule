@@ -10,8 +10,7 @@ class jadwal extends Model
 {
     protected $table = 'penjadwalan_kelas';
     protected $fillable = ['pengajar_id','peserta_id','materi_id','kode_kelas','kelas','jam_masuk','jam_keluar','tgl_mulai','tgl_akhir'];
-    protected $timestamp =['created_at','updated_at'];
-
+    public $timestamps = false;
     public function materi()
     {
         return $this->hasMany(materi::class);
