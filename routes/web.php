@@ -67,7 +67,7 @@ Route::resource('materi',materiController::class);
 Route::resource('peserta',pesertaController::class);
 Route::resource('pengajar',pengajarController::class);
 Route::resource('/jadwal',jadwalController::class);
-Route::get('dash',[DashboardController::class,'index']);
+Route::get('dashboard',[DashboardController::class,'index']);
 Route::get('jadwal-PDF',[jadwalController::class,'jadwalPDF']);
 Route::get('surat-tugas',[jadwalController::class,'pengajarPDF']);
 Route::get('formemail', [KirimEmailController::class, 'index']);
