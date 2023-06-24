@@ -1,25 +1,27 @@
 @extends('admin.layout.index')
 @section('content')
 @include('sweetalert::alert')
-<h5 id='container-jadwlH5' class="card-title fw-semibold mb-4">Jadwal Kelas</h5>
-<div class="card w-100">
-    <div class="card-body p-4">
-        @if(Auth::user()->role_access =='admin')
-        <a href="{{route('jadwal.create')}}" class="btn btn-primary"><i class="ti ti-plus"></i></a>
-        @endif
-        <a href="{{url('jadwal-PDF')}}" class="btn btn-success"><i class="ti ti-file"></i></a>
-        <a href="{{url('surat-tugas')}}" class="btn btn-success"><i class="ti ti-pencil"></i></a>
-        <br>
-        <br>
-        @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-        @endif
 
-        <form action="{{ route('jadwal.index') }}" method="GET" class="mb-3">
+                <h5 id='container-jadwlH5' class="card-title fw-semibold mb-4">Jadwal Kelas</h5>
+                <div class="card w-100">
+              <div class="card-body p-4">
+                @if(Auth::user()->role_access =='admin')
+                <a href="{{route('jadwal.create')}}" class="btn btn-primary"><i class="ti ti-plus"></i></a>
+                @endif
+                <a href="{{url('jadwal-PDF')}}" class="btn btn-success"><i class="ti ti-file-lambda"></i></a>
+                <a href="{{url('surat-tugas')}}" class="btn btn-danger"><i class="ti ti-file-import"></i></a>
+                <br>
+                <br>
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                <p>{{ $message }}</p>
+                </div>
+                @endif
+
+
+        <form action="/jadwal" method="GET" class="mb-3">
             <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="Cari...">
+                <input type="search" name="search" class="form-control" placeholder="Cari...">
                 <button type="submit" class="btn btn-primary">Cari</button>
             </div>
         </form>
