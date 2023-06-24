@@ -1,32 +1,7 @@
 @extends('users.layout.index')
 @section('content')
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div id="logo">
-        <h1><a href="{{url('/beranda')}}"><span></span>E-Schedule</a></h1>
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/beranda')}}">Home</a></li>
-          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/about')}}">About</a></li>
-          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/team')}}">Team</a></li>
-          <li><a id='container-HIDA' class="nav-link scrollto active" href="{{url('/contact')}}">Contact</a></li>
-          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/login')}}">Login</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-</header>
-    <!-- ======= End Header ======= -->
-
-<!-- ======= Contact Section ======= -->
 <section id="contact" class="padd-section">
-
 <div class="container" data-aos="fade-up">
   <div class="section-title text-center">
     <h2>Contact</h2>
@@ -65,9 +40,9 @@
 
     <div class="col-lg-5 col-md-8">
       <div class="form">
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <form action="/kirim" method="post" role="form" class="php-email-form">
           <div class="form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            <input type="text" name="nama" class="form-control" id="name" placeholder="Your Name" required>
           </div>
           <div class="form-group mt-3">
             <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
@@ -76,14 +51,9 @@
             <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="komentar" rows="5" placeholder="Message" required></textarea>
           </div>
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          <div id="lmmmm" class="text-center"><button type="submit">Send Message</button></div>
         </form>
       </div>
     </div>

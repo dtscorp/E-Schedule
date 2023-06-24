@@ -67,7 +67,7 @@
                   </div>
 
                   <a id='container-APLogin' class="small text-muted" href="#">Forgot password?</a>
-                  <p id='container-APLogin' class="mb-5 pb-lg-2">Don't have an account? <a id='container-APRegis' href="#">Register here</a></p>
+                  <p id='container-APLogin' class="mb-5 pb-lg-2">Don't have an account? <a id='container-APRegis' class="regiss" href="#">Register here</a></p>
                   <a id='container-APLogin' href="#" class="small text-muted">Terms of use.</a>
                   <a id='container-APLogin' href="#" class="small text-muted">Privacy policy</a>
                 </form>

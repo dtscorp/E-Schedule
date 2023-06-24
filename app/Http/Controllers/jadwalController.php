@@ -10,7 +10,8 @@ use App\Models\Pengajar;
 use App\Models\Peserta;
 use PHPUnit\Framework\TestSize\Known;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class jadwalController extends Controller
 {
@@ -19,6 +20,15 @@ class jadwalController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->role_access == 'pengajar') {
+           $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+                ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
+                ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
+                ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
+                ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar')
+                ->orderBy('penjadwalan_kelas.id', 'desc')->where('pengajar_id',Auth::user()->pengajar_id)
+                ->get();
+        }
         $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
                 ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
                 ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
@@ -88,6 +98,8 @@ class jadwalController extends Controller
         $jadwal->kelas = $request->kelas;
         $jadwal->jam_masuk = $request->jam_masuk;
         $jadwal->jam_keluar = $request->jam_keluar;
+        $jadwal->tgl_mulai = $request->tgl_mulai;
+        $jadwal->tgl_akhir = $request->tgl_akhir;
         $jadwal->save();
         return redirect()->route('jadwal.index')
         ->with('success','Data jadwal Baru Berhasil Disimpan');
@@ -122,9 +134,11 @@ class jadwalController extends Controller
         ->select('penjadwalan_kelas.*', 'materi.nama as materi')
         ->orderBy('penjadwalan_kelas.id', 'desc')
         ->get();
+
+        $jumlahPeserta = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')->select( DB::raw('COUNT(peserta_id) as peserta'))->count();
         $materi = Materi::all();
         $pengajar = Pengajar::all();
-        $pdf = PDF::loadView('admin.jadwal.pengajarPDF',['jadwal'=>$jadwal,'materi'=>$materi,'pengajar'=>$pengajar]);
+        $pdf = PDF::loadView('admin.jadwal.pengajarPDF',['jadwal'=>$jadwal,'materi'=>$materi,'pengajar'=>$pengajar, 'jumlahPeserta'=>$jumlahPeserta]);
        return $pdf->download('Surat-tugas.pdf');
 
     }

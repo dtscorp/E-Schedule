@@ -62,7 +62,7 @@
         @endforeach
         <tr>
             <td bgcolor="#cbdad5">Jumlah Peserta</td>
-            <td>5</td>
+            <td>{{$jumlahPeserta}}</td>
         </tr>
         <tr>
             <td bgcolor="#cbdad5"> Tempat Pelaksanaan</td>
