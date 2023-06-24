@@ -52,6 +52,13 @@
                             <p>{{$user->role_access}}</p>
                         </div>
                     </div>
+                    <div class="row">
+                    <div class="col-md-2">
+                        <a id='continer-view' href="{{route('user.index')}}" class="btn btn-secondary">
+                           Kembali<i class="ti ti-arrow-back-up"></i>
+                        </a>
+                        </div>
+                    </div>
 
                 </div>
             </div>

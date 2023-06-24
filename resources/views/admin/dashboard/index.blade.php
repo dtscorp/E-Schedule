@@ -9,4 +9,6 @@
     <h1>Hallo</h1>
     </div>
 </div>
+<div id="chart"></div>
+<div id="chart2"></div>
 @endsection

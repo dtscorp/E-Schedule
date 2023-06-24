@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\KelasController;
+use App\Http\Controllers\apiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\MateriController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\materiController as ControllersMateriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('jadwal',[apiController::class,'getJadwal']);
+Route::resource('materi',MateriController::class);
+Route::resource('kelas',KelasController::class);
+Route::resource('user', UserController::class);
+
+

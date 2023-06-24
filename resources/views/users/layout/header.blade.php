@@ -40,6 +40,9 @@
                                     </form>
                                 </div>
                             </li>
+                            @if( Auth::user()->role_access != 'peserta')
+                            <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/dashboard')}}">Dashboard</a></li>
+                            @endif
                         @endguest
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

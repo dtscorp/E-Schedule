@@ -3,9 +3,12 @@
 @include('sweetalert::alert')
 <div class="card w-100">
               <div class="card-body p-4">
-              <a id='container-CratPeserta' href="{{route('peserta.create')}}" class="btn">Tambah Data</a>
+              <a href="{{route('peserta.create')}}" class="btn btn-success" title="Tambah Data">
+                Tambah Data
+                <i class="ti ti-plus"></i>
+              </a>
                 
-                <h5 id='container-pesertaH5' class="card-title fw-semibold mb-4">Data Peserta</h5>
+                <h5 id='container-mterH5' class="card-title fw-semibold mb-4">Data Peserta</h5>
                 <div class="table-responsive">
                   <table id='container-Tble' class="table text-nowrap mb-0 align-middle">
                     <thead class="text-dark fs-4">
@@ -60,13 +63,13 @@
                             <form action="{{route('peserta.destroy',$dbpeserta->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <a id='continer-edit' href="{{route('peserta.edit',$dbpeserta->id)}}" class="btn">
+                            <a href="{{route('peserta.edit',$dbpeserta->id)}}" title="Edit Data" class="btn btn-warning ">
                             <i class="ti ti-pencil"></i>
-                            </a>
-                            <a id='continer-view' href="{{route('peserta.show',$dbpeserta->id)}}" class="btn">
+                            </a> 
+                            <a  href="{{route('peserta.show',$dbpeserta->id)}}" title="Detail Data" class="btn btn-info ">
                             <i class="ti ti-eye"></i>
                             </a>
-                            <button id='container-dlete' type="submit" class="btn delete-confirm">   
+                            <button type="submit" title="Hapus Data" class="btn btn-danger delete-confirm">   
                                 <i class="ti ti-trash"></i>
                             </button>
                             </form>

@@ -27,8 +27,13 @@
         <div class="mb-3">
             <label id="gender" class="form-label d-block">gender</label>
             <div class="form-check form-check-inline">
-            <input id='inp-gender' class="@error('gender') is-invalid @enderror" name="gender" value="L" {{$peserta->gender == "L"?'checked': ''}} type="radio" placeholder="gender" data-sb-validations="required" /> L 
-            <input id='inp-gender' class="@error('gender') is-invalid @enderror" name="gender" value="P" {{$peserta->gender == "P"?'checked': ''}} type="radio" placeholder="gender" data-sb-validations="required" /> P
+            @if($peserta->gender == 'L')
+            <input class="@error('gender') is-invalid @enderror" name="gender" value="L" id="gender" type="radio" placeholder="gender" data-sb-validations="required" checked/> L <br>
+            <input class="@error('gender') is-invalid @enderror" name="gender" value="P" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> P
+            @else
+            <input class="@error('gender') is-invalid @enderror" name="gender" value="L" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> L <br>
+            <input class="@error('gender') is-invalid @enderror" name="gender" value="P" id="gender" type="radio" placeholder="gender" data-sb-validations="required" checked/> P
+            @endif
             @error('gender')
             <div id="validationServer03Feedback" class="invalid-feedback">
                 {{$message}}
@@ -72,9 +77,9 @@
             </div>
             @enderror
         </div>
-            <button id='tbn-prst1' value='update' name='proses' class="btn btn-success btn-lg" id="submitButton" type="submit">Save</button>
+            <button  value='update' name='proses' class="btn btn-success " id="submitButton" type="submit">Update</button>
             <input type="hidden" name="id" value="{{ $peserta->id }}"/>
-           <a href="{{ url('/peserta') }}" id='tbn-ccncl1' class="btn btn-warning btn-lg">Batal</a>
+           <a href="{{ url('/peserta') }}" class="btn btn-warning ">Batal</a>
     </form>
 </div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

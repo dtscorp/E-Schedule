@@ -82,8 +82,8 @@
                     </div>
                 @enderror
             </div>
-            <button class="btn btn-primary" name="proses" value="simpan" id="simpan" type="submit">Simpan</button>
-            <a href="{{ url('/user') }}" class="btn btn-info">Batal</a>
+            <button class="btn btn-success" name="proses" value="simpan" id="simpan" type="submit">Simpan</button>
+            <a href="{{ url('/user') }}" class="btn btn-warning">Batal</a>
         </form>
     </div>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

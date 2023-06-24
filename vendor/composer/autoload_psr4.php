@@ -100,9 +100,5 @@ return array(
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'Barryvdh\\DomPDF\\' => array($vendorDir . '/barryvdh/laravel-dompdf/src'),
     'Balping\\JsonRaw\\' => array($vendorDir . '/balping/json-raw-encoder/src'),
-<<<<<<< HEAD
-=======
-
->>>>>>> 683dcaa8727e65266b260c0ba8e7027ff2b6128d
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
 );

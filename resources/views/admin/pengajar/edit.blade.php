@@ -34,8 +34,13 @@
         </div>
         <div class="form-control mb-3">
             <label class="mb-2" for="gender">Gender</label> <br>
-            <input class="@error('gender') is-invalid @enderror" name="gender" value="L" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> L <br>
+            @if($pengajar->gender == 'L')
+            <input class="@error('gender') is-invalid @enderror" name="gender" value="L" id="gender" type="radio" placeholder="gender" data-sb-validations="required" checked/> L <br>
             <input class="@error('gender') is-invalid @enderror" name="gender" value="P" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> P
+            @else
+            <input class="@error('gender') is-invalid @enderror" name="gender" value="L" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> L <br>
+            <input class="@error('gender') is-invalid @enderror" name="gender" value="P" id="gender" type="radio" placeholder="gender" data-sb-validations="required" checked/> P
+            @endif
             @error('gender')
                 <div id="validationServer03Feedback" class="invalid-feedback">
                     {{$message}}
@@ -79,18 +84,12 @@
             @enderror
         </div>
         <div class="form-floating mb-3">
-            <textarea class="form-control" name="desk" value="{{$pengajar->desk}}" id="desk" type="text" placeholder="desk"
-                data-sb-validations="required"></textarea>
+            <textarea class="form-control" name="desk" value="" id="desk" type="text" placeholder="desk"
+                data-sb-validations="required">{{$pengajar->desk}}</textarea>
             <label for="desk">Deskripsi</label>
             <div class="invalid-feedback" data-sb-feedback="desk:required">Deskripsi is required.</div>
         </div>
-        <div class="form-floating mb-3">
-            <textarea class="form-control" name="desk" value="{{$pengajar->desk}}" id="desk" type="text" placeholder="desk"
-                data-sb-validations="required"></textarea>
-            <label for="desk">Deskripsi</label>
-            <div class="invalid-feedback" data-sb-feedback="desk:required">Deskripsi is required.</div>
-        </div>
-        <button class="btn btn-primary" name="proses" value="update" id="update" type="submit">Update</button>
+        <button class="btn btn-success" name="proses" value="update" id="update" type="submit">Update</button>
         <input type="hidden" name="id" value="{{ $pengajar->id }}"/>
         <a href="{{ url('/pengajar') }}" class="btn btn-info">Batal</a>
     </form>

@@ -3,7 +3,10 @@
 @include('sweetalert::alert')
         <div class="card w-100">
               <div class="card-body p-4">
-                <a id='container-CratMT' href="{{route('user.create')}}" class="btn btn-success">Tambah Data</a>
+                <a href="{{route('user.create')}}" class="btn btn-success" title="Tambah Data"> 
+                  Tambah Data
+                  <i class="ti ti-plus"></i>
+               </a>
                 <h5 id='container-mterH5' class="card-title fw-semibold mb-4">Data Pengguna</h5>
                 <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">
@@ -35,18 +38,18 @@
                         <td id='container-THHH' class="border-bottom-0"><h6 id='container-THHH' class="fw-semibold mb-0">{{$no++}}</h6></td>
                         <td id='container-THHH' class="border-bottom-0">{{$data->name}}</td>
                         <td id='container-THHH' class="border-bottom-0">{{$data->email}}</td>
-                        <td id='container-THHH' class="border-bottom-0">{{$data->role}}</td>
+                        <td id='container-THHH' class="border-bottom-0">{{$data->role_access}}</td>
                         <td>
-                          <a id='continer-viewMTT' href="{{route('user.show',$data->id)}}" class="btn">
+                          <a id='continer-viewMTT' href="{{route('user.show',$data->id)}}" title="Edit Data" class="btn btn-warning">
                             <i class="ti ti-eye"></i>
                             </a>
                             <form action="{{route('user.destroy',$data->id)}}" method="POST">
-                            <a id='continer-editMTT' href="{{route('user.edit',$data->id)}}" class="btn">
+                            <a id='continer-editMTT' href="{{route('user.edit',$data->id)}}" title="Detail Data" class="btn btn-info">
                             <i class="ti ti-pencil"></i>
                             </a>
                             @csrf
                             @method('DELETE')
-                            <button id='continer-dtelwMTT' type="submit" class="btn delete-confirm" >   
+                            <button id='continer-dtelwMTT' type="submit" title="Hapus Data" class="btn btn-danger delete-confirm" >   
                                 <i class="ti ti-trash"></i>
                             </button>
                             </form>

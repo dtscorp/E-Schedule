@@ -120,7 +120,7 @@ class pengajarController extends Controller
                 'email' => 'required|max:45',
                 'alamat' => 'required|max:70',
                 'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:2048',
-                'desk' => 'required|max:100',
+                'desk' => 'required',
             ],
             //custom pesan errornya
             [

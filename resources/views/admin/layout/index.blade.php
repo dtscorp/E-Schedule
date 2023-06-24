@@ -49,8 +49,8 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   <script>
         $('.delete-confirm').on('click', function(event) {
             event.preventDefault();
@@ -73,6 +73,126 @@
         });
         });
   </script>
+
+<script>
+$( "#select" )
+  .on( "change", function() {
+    var str = "";
+    $( "select option:selected" ).each( function() {
+      return alert('Yes')
+    } );
+  } )
+  .trigger( "change" );
+</script>
+<script>
+  
+$(function () {
+
+// =====================================
+// Profit
+// ===================================== 
+
+var chart = {
+
+  series: [
+    { name: "Earnings this month:", data: [355, 390, 300, 350, 390, 180, 355, 390] },
+    { name: "Expense this month:", data: [280, 250, 325, 215, 250, 310, 280, 250] },
+  ],
+
+  chart: {
+    type: "bar",
+    height: 345,
+    offsetX: -15,
+    toolbar: { show: true },
+    foreColor: "#adb0bb",
+    fontFamily: 'inherit',
+    sparkline: { enabled: false },
+  },
+
+
+  colors: ["#5D87FF", "#49BEFF"],
+
+
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: "35%",
+      borderRadius: [6],
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    },
+  },
+  markers: { size: 0 },
+
+  dataLabels: {
+    enabled: false,
+  },
+
+
+  legend: {
+    show: false,
+  },
+
+
+  grid: {
+    borderColor: "rgba(0,0,0,0.1)",
+    strokeDashArray: 3,
+    xaxis: {
+      lines: {
+        show: false,
+      },
+    },
+  },
+
+  xaxis: {
+    type: "category",
+    categories: ["16/08", "17/08", "18/08", "19/08", "20/08", "21/08", "22/08", "23/08"],
+    labels: {
+      style: { cssClass: "grey--text lighten-2--text fill-color" },
+    },
+  },
+
+
+  yaxis: {
+    show: true,
+    min: 0,
+    max: 400,
+    tickAmount: 4,
+    labels: {
+      style: {
+        cssClass: "grey--text lighten-2--text fill-color",
+      },
+    },
+  },
+  stroke: {
+    show: true,
+    width: 3,
+    lineCap: "butt",
+    colors: ["transparent"],
+  },
+
+  
+  tooltip: { theme: "light" },
+
+  responsive: [
+    {
+      breakpoint: 600,
+      options: {
+        plotOptions: {
+          bar: {
+            borderRadius: 3,
+          }
+        },
+      }
+    }
+  ]
+
+};
+
+var chart = new ApexCharts(document.querySelector("#chart2"), chart);
+chart.render();
+})
+</script>
   <script src="{{asset('admin/assets/libs/jquery/dist/jquery.min.js')}}"></script>
   <script src="{{asset('admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('admin/assets/js/sidebarmenu.js')}}"></script>

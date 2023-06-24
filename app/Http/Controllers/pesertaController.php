@@ -87,8 +87,8 @@ class pesertaController extends Controller
      */
     public function show(string $id)
     {
-        $pesert = Peserta::find($id);
-        return view('admin.peserta.view',compact('pesert'));
+        $peserta= Peserta::find($id);
+        return view('admin.peserta.detail',compact('peserta'));
     }
 
     /**

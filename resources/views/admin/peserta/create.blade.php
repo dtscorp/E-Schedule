@@ -70,8 +70,8 @@
             </div>
             @enderror
         </div>
-            <button id='tbn-prst' class="btn btn-success btn-lg" name='proses' id="submit" value='submit' type="submit">Create</button>
-            <a href="{{ url('/peserta') }}" id='tbn-ccncl' class="btn btn-warning btn-lg">Cancel</a>
+            <button class="btn btn-success" name='proses' id="submit" value='submit' type="submit">Create</button>
+            <a href="{{ url('/peserta') }}" class="btn btn-warning">Cancel</a>
     </form>
 </div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
