@@ -4,8 +4,6 @@
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
 
-        'reference' => '2c39021943a6ae8b2141916dd68c5f8c46a12535',
-
         'reference' => 'c4b5ccf261d0378b6f1bc845800c367fe6cbc926',
 
         'type' => 'project',
@@ -413,8 +411,6 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-
-            'reference' => '2c39021943a6ae8b2141916dd68c5f8c46a12535',
 
             'reference' => 'c4b5ccf261d0378b6f1bc845800c367fe6cbc926',
 

@@ -80,7 +80,7 @@
         </div>
         <div class="form-floating mb-3">
             <textarea class="form-control" name="desk" value="{{$pengajar->desk}}" id="desk" type="text" placeholder="desk"
-                data-sb-validations="required"></textarea>
+                data-sb-validations="required">{{$pengajar->desk}}</textarea>
             <label for="desk">Deskripsi</label>
             <div class="invalid-feedback" data-sb-feedback="desk:required">Deskripsi is required.</div>
         </div>

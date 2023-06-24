@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\PengajarController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,7 +23,6 @@ use App\Http\Controllers\Api\PengajarController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 
 Route::get('/pengajar', [PengajarController::class, 'index']);
 Route::get('/pengajar/{id}', [PengajarController::class, 'show']);

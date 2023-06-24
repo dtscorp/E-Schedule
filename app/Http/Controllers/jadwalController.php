@@ -177,5 +177,5 @@ class jadwalController extends Controller
        return $pdf->download('Surat-tugas.pdf');
 
     }
-
+   
 }
