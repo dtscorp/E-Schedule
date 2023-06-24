@@ -1,5 +1,6 @@
 @extends('admin.layout.index')
 @section('content')
+@include('sweetalert::alert')
 <h3>Daftar Pengajar</h3></br>
 <a href="{{route('pengajar.create')}}" class="btn btn-info">Tambah Data</a></br></br>
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -9,7 +10,7 @@
                     @empty($data->foto)
                     <img src="{{asset('admin/assets/images/nophoto.jpg')}}" class="card-img-top"  alt="...">
                     @else
-                    <img src="{{asset('admin/assets/images')}}/{{$data->foto}}" class="card-img-top" style="width : 100%; height : 100%" alt="{{$data->foto}}">
+                    <img src="{{asset('admin/assets/images')}}/{{$data->foto}}" class="card-img-top img-thumbnail"  alt="{{$data->foto}}">
                     @endempty
                     <div class="card-body">
                         <h5 class="card-title">{{ $data->nama }}</h5>
@@ -28,9 +29,8 @@
                             <i class="ti ti-pencil"></i>
                           </a>
                           <!-- hapus data -->
-                          <button class="btn btn-danger" type="submit" title="Hapus"
-                          name="proses" value="hapus"
-                          onclick="return confirm('Anda Yakin Data Dihapus?')">
+                          <button class="btn btn-danger delete-confirm" type="submit" title="Hapus"
+                          name="proses" value="hapus">
                           <i class="ti ti-trash"></i>
                         </button>
                         <input type="hidden" name="idx" value="" />

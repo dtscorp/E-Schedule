@@ -8,9 +8,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
-                    <img alt="Profile" src="">
-                    <h3 align="center">Kevin Anderson</h3>
-                    <p align="center">Web Designer</p>
+                    @empty($user->foto)
+                    <img src="{{asset('admin/assets/images/nophoto.jpg')}}" width="35" height="35" class="rounded-circle">
+                    @else
+                    <img src="{{asset('admin/assets/images/profile/$user->foto') }}" width="35" height="35" class="rounded-circle" alt="{{$data->foto}}">
+                    @endempty
+                    <h3 align="center">{{$user->name}}</h3>
+                    <p align="center">{{$user->role_access}}</pd
                 </div>
 
                 <div class="col-md-8">

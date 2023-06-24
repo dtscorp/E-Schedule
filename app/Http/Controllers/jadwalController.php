@@ -10,24 +10,39 @@ use App\Models\Pengajar;
 use App\Models\Peserta;
 use PHPUnit\Framework\TestSize\Known;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class jadwalController extends Controller
 {
     /**
      *Display a listing of the resource.
      */
-    public function index()
-    {
-        $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
-                ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
-                ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
-                ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
-                ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar','peserta.nama as peserta')
-                ->orderBy('penjadwalan_kelas.id', 'desc')
-                ->get();
-        return view('admin.jadwal.index', compact('jadwal'));
+    public function index(Request $request)
+{
+    $query = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+        ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
+        ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
+        ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
+        ->select('penjadwalan_kelas.*', 'materi.nama as materi', 'pengajar.nama as pengajar', 'peserta.nama as peserta')
+        ->orderBy('penjadwalan_kelas.id', 'desc');
+
+    if ($request->has('search')) {
+        $searchTerm = $request->input('search');
+        $query->where(function ($q) use ($searchTerm) {
+            $q->where('penjadwalan_kelas.kode_kelas', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('penjadwalan_kelas.kelas', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('materi.nama', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('pengajar.nama', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('peserta.nama', 'LIKE', '%' . $searchTerm . '%');
+        });
     }
+
+    $jadwal = $query->get();
+
+    return view('admin.jadwal.index', compact('jadwal'));
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -39,7 +54,7 @@ class jadwalController extends Controller
         $peserta = Peserta::all();
         return view('admin.jadwal.create',compact('materi','pengajar','peserta'));
 
-        
+
     }
 
     /**
@@ -124,13 +139,13 @@ class jadwalController extends Controller
         ->select('penjadwalan_kelas.*', 'materi.nama as materi')
         ->orderBy('penjadwalan_kelas.id', 'desc')
         ->get();
+
+        $jumlahPeserta = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')->select( DB::raw('COUNT(peserta_id) as peserta'))->count();
         $materi = Materi::all();
         $pengajar = Pengajar::all();
-        $pdf = PDF::loadView('admin.jadwal.pengajarPDF',['jadwal'=>$jadwal,'materi'=>$materi,'pengajar'=>$pengajar]);
+        $pdf = PDF::loadView('admin.jadwal.pengajarPDF',['jadwal'=>$jadwal,'materi'=>$materi,'pengajar'=>$pengajar, 'jumlahPeserta'=>$jumlahPeserta]);
        return $pdf->download('Surat-tugas.pdf');
 
     }
 
-
-    
 }
