@@ -78,7 +78,7 @@ Route::resource('pengajar',pengajarController::class)->middleware('auth');
 Route::resource('kelas', kelasController::class)->middleware('auth');
 });
 Route::middleware(['peran:admin-pengajar'])->group(function() {
-Route::resource('/dashboard',ChartController::class)->middleware('auth');
+Route::resource('/dashboard',DashboardController::class)->middleware('auth');
 Route::resource('/jadwal',jadwalController::class)->middleware('auth');
 Route::get('jadwal-PDF',[jadwalController::class,'jadwalPDF'])->middleware('auth');
 Route::get('surat-tugas',[jadwalController::class,'pengajarPDF'])->middleware('auth');
