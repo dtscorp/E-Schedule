@@ -24,7 +24,6 @@ return array(
     'App\\Http\\Controllers\\KirimEmailController' => $baseDir . '/app/Http/Controllers/KirimEmailController.php',
     'App\\Http\\Controllers\\LandingPageController' => $baseDir . '/app/Http/Controllers/LandingPageController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
-    'App\\Http\\Controllers\\apiController' => $baseDir . '/app/Http/Controllers/apiController.php',
     'App\\Http\\Controllers\\jadwalController' => $baseDir . '/app/Http/Controllers/jadwalController.php',
     'App\\Http\\Controllers\\kategoriController' => $baseDir . '/app/Http/Controllers/kategoriController.php',
     'App\\Http\\Controllers\\kelasController' => $baseDir . '/app/Http/Controllers/kelasController.php',

@@ -26,8 +26,8 @@
             </a>
           </li>
           @endif
-          
-         
+
+
           <li class="sidebar-item">
             <a id='container-sidLink' class="sidebar-link" href="{{url('/dashboard')}}" aria-expanded="false">
               <span>
@@ -36,7 +36,15 @@
               <span id='container-SPP' class="hide-menu">Dashboard</span>
             </a>
           </li>
-
+          <li class="sidebar-item">
+            <a id='container-sidLink' class="sidebar-link" href="{{url('/index_pengajar')}}" aria-expanded="false">
+              <span>
+              <i class="fa-solid fa-calendar-days"></i>
+              </span>
+              <span id='container-SPP' class="hide-menu">Jadwal Kelas</span>
+            </a>
+          </li>
+          @if(Auth::user()->role_access == 'admin')
           <li class="sidebar-item">
             <a id='container-sidLink' class="sidebar-link" href="{{route('jadwal.index')}}" aria-expanded="false">
               <span>
@@ -45,7 +53,6 @@
               <span id='container-SPP' class="hide-menu">Jadwal Kelas</span>
             </a>
           </li>
-          @if(Auth::user()->role_access == 'admin')
           <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span id='contaimner-sideSpan' class="hide-menu">Master Data</span>

@@ -34,21 +34,21 @@ class pengajarController extends Controller
         //proses input produk dari form
         $request->validate(
             [
-                'nip' => 'required|unique:pengajar|max:5',
+                'nip' => 'required|unique:pengajar|max:3',
                 'nama' => 'required|max:45',
                 'gender' => 'required',
                 'telp' => 'required|max:20',
                 'email' => 'required|max:45',
                 'alamat' => 'required|max:70',
                 'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:2048',
-                'desk' => 'required|max:100',
+                'desk' => 'required',
 
             ],
             //custom pesan errornya
             [
                 'nip.required' => 'NIP Wajib Diisi',
                 'nip.unique' => 'NIP Sudah Ada (Terduplikasi)',
-                'nip.max' => 'NIP Maksimal 5 karakter',
+                'nip.max' => 'NIP Maksimal 3 karakter',
                 'nama.required' => 'Nama Wajib Diisi',
                 'nama.max' => 'Nama Maksimal 45 karakter',
                 'gener.required' => 'Gender Wajib Diisi',
@@ -113,7 +113,7 @@ class pengajarController extends Controller
         //proses input produk dari form
         $request->validate(
             [
-                'nip' => 'required|max:5',
+                'nip' => 'required|max:3',
                 'nama' => 'required|max:45',
                 'gender' => 'required',
                 'telp' => 'required|max:20',
@@ -126,7 +126,7 @@ class pengajarController extends Controller
             [
                 'nip.required' => 'NIP Wajib Diisi',
                 'nip.unique' => 'NIP Sudah Ada (Terduplikasi)',
-                'nip.max' => 'NIP Maksimal 5 karakter',
+                'nip.max' => 'NIP Maksimal 3 karakter',
                 'nama.required' => 'Nama Wajib Diisi',
                 'nama.max' => 'Nama Maksimal 45 karakter',
                 'gender.required' => 'Gender Wajib Diisi',
@@ -190,4 +190,6 @@ class pengajarController extends Controller
         return redirect()->route('pengajar.index')
             ->with('success', 'Data Pengajar Berhasil Dihapus');
     }
+
+
 }

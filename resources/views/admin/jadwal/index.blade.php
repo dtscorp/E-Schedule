@@ -1,6 +1,7 @@
 @extends('admin.layout.index')
-@section('content')        
+@section('content')
 @include('sweetalert::alert')
+
                 <h5 id='container-jadwlH5' class="card-title fw-semibold mb-4">Jadwal Kelas</h5>
                 <div class="card w-100">
               <div class="card-body p-4">
@@ -8,19 +9,19 @@
                 <a href="{{route('jadwal.create')}}" class="btn btn-primary"> Set Jadwal<i class="ti ti-plus"></i></a>
                 @endif
                 <a href="{{url('jadwal-PDF')}}" class="btn btn-success">Cetak Jadwal<i class="ti ti-printer"></i></a>
-                <!-- <a href="{{url('surat-tugas')}}" class="btn btn-success"><i class="ti ti-pencil"></i></a> -->
                 <br>
                 <br>
                 @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                 <p>{{ $message }}</p>
                 </div>
-                @endif
-                
-                @if(Auth::user()->role_access !='admin') 
-               <!-- Pengajar  -->
-                
-                @endif
+                @endif  
+        <form action="/jadwal" method="GET" class="mb-3">
+            <div class="input-group">
+                <input type="search" name="search" class="form-control" placeholder="Cari...">
+                <button type="submit" class="btn btn-primary">Cari</button>
+            </div>
+        </form>
                 <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">
                     <thead class="text-dark fs-4">
@@ -76,7 +77,7 @@
                         <td class="border-bottom-0">{{$data->tgl_akhir}}</td>
                         <td class="border-bottom-0">{{$data->jam_masuk}}</td>
                         <td class="border-bottom-0">{{$data->jam_keluar}}</td>
-                        @php 
+                        @php
                           if(now() < $data->tgl_mulai){
                             $status = 'Pending';
                           }elseif(now()->between($data->tgl_mulai,$data->tgl_akhir)){
@@ -99,7 +100,7 @@
                             </a>
                             @csrf
                             @method('DELETE')
-                            <button id='container-dlete' type="submit" class="btn delete-confirm">   
+                            <button id='container-dlete' type="submit" class="btn delete-confirm">
                                 <i class="ti ti-trash"></i>
                             </button>
                             </form>

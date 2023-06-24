@@ -598,7 +598,6 @@ class ComposerStaticInited908d7ee2bdac8bb9f877ee3d92456d
         'App\\Http\\Controllers\\KirimEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/KirimEmailController.php',
         'App\\Http\\Controllers\\LandingPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingPageController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
-        'App\\Http\\Controllers\\apiController' => __DIR__ . '/../..' . '/app/Http/Controllers/apiController.php',
         'App\\Http\\Controllers\\jadwalController' => __DIR__ . '/../..' . '/app/Http/Controllers/jadwalController.php',
         'App\\Http\\Controllers\\kategoriController' => __DIR__ . '/../..' . '/app/Http/Controllers/kategoriController.php',
         'App\\Http\\Controllers\\kelasController' => __DIR__ . '/../..' . '/app/Http/Controllers/kelasController.php',

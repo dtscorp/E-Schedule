@@ -79,7 +79,7 @@
                         </a>
                         </div>
                         <div class="col-md-2">
-                        <a id='continer-view' href="{{route('jadwal.index')}}" class="btn btn-secondary">
+                        <a id='continer-view' href="{{url('index_pengajar')}}" class="btn btn-secondary">
                            Kembali<i class="ti ti-arrow-back-up"></i>
                         </a>
                         </div>

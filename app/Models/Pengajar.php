@@ -10,5 +10,5 @@ class Pengajar extends Model
     use HasFactory;
     protected $table = 'pengajar';
     protected $fillable = ['nip','nama','gender','telp','email','alamat','foto','desk'];
-    public $timestamps =['created_at','updated_at'];
+    public $timestamps = false;
 }

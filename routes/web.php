@@ -73,8 +73,9 @@ Route::resource('pengajar',pengajarController::class)->middleware('auth');
 Route::resource('kelas', kelasController::class)->middleware('auth');
 });
 Route::middleware(['peran:admin-pengajar'])->group(function() {
-Route::resource('/dashboard',ChartController::class)->middleware('auth');
+Route::resource('/dashboard',DashboardController::class)->middleware('auth');
 Route::resource('/jadwal',jadwalController::class)->middleware('auth');
+Route::get('index_pengajar',[jadwalController::class,'index_pengajar'])->middleware('auth');
 Route::get('jadwal-PDF',[jadwalController::class,'jadwalPDF'])->middleware('auth');
 Route::get('jadwal_pengajar',[jadwalController::class,'jadwal_pengajar'])->middleware('auth');
 Route::get('detail_surat_tugas/{id}',[jadwalController::class,'suratTugas'])->middleware('auth');
@@ -84,8 +85,10 @@ Route::get('/profile', function () {
 })->middleware('auth');
 });
 
+
 Route::get('formemail', [KirimEmailController::class, 'index'])->middleware('auth');
 Route::post('kirim', [KirimEmailController::class, 'kirim']) ->middleware('auth');
+
 
 Route::get('/access-denied', function () {
     return view('access_denied');

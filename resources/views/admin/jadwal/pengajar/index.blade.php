@@ -4,8 +4,12 @@
 <h5 id='container-jadwlH5' class="card-title fw-semibold mb-4">Jadwal Kelas</h5>
               <div class="card w-100">
               <div class="card-body p-4">
-              <a href="{{url('jadwal_pengajar')}}" class="btn btn-success"><i class="ti ti-file"></i></a>
-                <a href="{{url('surat_tugas')}}" class="btn btn-success"><i class="ti ti-pencil"></i></a>
+              <a href="{{url('jadwal_pengajar')}}" class="btn btn-success">
+                Download Jadwal
+              <i class="ti ti-file"></i></a>
+                <a href="{{url('surat_tugas')}}" class="btn btn-success">
+                Cetak Surat 
+                <i class="ti ti-printer"></i></a>
                 @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                 <p>{{ $message }}</p>

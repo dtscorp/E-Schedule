@@ -13,15 +13,73 @@ use PHPUnit\Framework\TestSize\Known;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Dompdf\Dompdf;
 
 class jadwalController extends Controller
 {
     /**
      *Display a listing of the resource.
      */
-    public function index()
-    {
-        $jadwal_P = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+
+    // public function index()
+    // {
+    //     $jadwal_P = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+    //     ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
+    //     ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
+    //     ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
+    //     ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar',DB::raw('COUNT(peserta_id) as peserta'))
+    //     ->where('penjadwalan_kelas.pengajar_id', '=',Auth::user()->pengajar_id)
+    //     ->groupBy('penjadwalan_kelas.kelas')->orderBy('penjadwalan_kelas.kelas', 'desc')
+    //     ->get();
+
+    //     $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+    //     ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
+    //     ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
+    //     ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
+    //     ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar','peserta.nama as peserta')
+    //     ->orderBy('penjadwalan_kelas.kelas', 'desc')
+    //     ->get();
+    //     $materi = Materi::all();
+    //     if(Auth::user()->role_access == 'admin'){
+    //         return view('admin.jadwal.index', compact('jadwal','materi','jadwal_P'));
+    //     }else{
+    //         return view('admin.jadwal.pengajar.index', compact('jadwal','materi','jadwal_P'));
+    //     }
+
+    public function index(Request $request)
+{
+    $query = DB::table('penjadwalan_kelas')
+        ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
+        ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
+        ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
+        ->select('penjadwalan_kelas.*', 'materi.nama as materi', 'pengajar.nama as pengajar', 'peserta.nama as peserta')
+        ->orderBy('penjadwalan_kelas.id', 'desc');
+
+    if ($request->has('search')) {
+        $searchTerm = $request->input('search');
+        $query->where(function ($q) use ($searchTerm) {
+            $q->where('penjadwalan_kelas.kode_kelas', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('penjadwalan_kelas.kelas', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('materi.nama', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('pengajar.nama', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('peserta.nama', 'LIKE', '%' . $searchTerm . '%');
+        });
+        $jadwal =DB::table('penjadwalan_kelas')
+            ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
+            ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
+            ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
+            ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar','peserta.nama as peserta')
+            ->orderBy('penjadwalan_kelas.kelas', 'desc')
+            ->get();
+    }
+    $materi = Materi::all();   
+    $jadwal = $query->get();
+        return view('admin.jadwal.index', compact('jadwal','materi'));
+    }
+
+
+    public function index_pengajar(Request $request){
+        $jadwal_P =DB::table('penjadwalan_kelas')
         ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
         ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
         ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
@@ -29,20 +87,9 @@ class jadwalController extends Controller
         ->where('penjadwalan_kelas.pengajar_id', '=',Auth::user()->pengajar_id)
         ->groupBy('penjadwalan_kelas.kelas')->orderBy('penjadwalan_kelas.kelas', 'desc')
         ->get();
-
-        $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
-        ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
-        ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
-        ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
-        ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar','peserta.nama as peserta')
-        ->orderBy('penjadwalan_kelas.kelas', 'desc')
-        ->get();
         $materi = Materi::all();
-        if(Auth::user()->role_access == 'admin'){
-            return view('admin.jadwal.index', compact('jadwal','materi','jadwal_P'));
-        }else{
-            return view('admin.jadwal.pengajar.index', compact('jadwal','materi','jadwal_P'));
-        }
+        return view('admin.jadwal.pengajar.index', compact('materi','jadwal_P'));
+    
     }
 
     /**
@@ -56,7 +103,7 @@ class jadwalController extends Controller
         $kelas = Kelas::all();
         return view('admin.jadwal.create',compact('materi','pengajar','peserta','kelas'));
 
-        
+
     }
 
     /**
@@ -119,11 +166,22 @@ class jadwalController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'kode_kelas' => 'required|max:45'
+            'kode_kelas' => 'required|max:45',
+            'pengajar_id'=>'required|max:11',
+            'peserta_id'=>'required|max:11',
+            'kelas' => 'required|max:45',
+
         ],
         //custom pesan errornya
         [
-            'kode_kelas.required'=>'Nama Wajib Diisi'
+            'kode_kelas.required'=>'Nama Wajib Diisi',
+            'kode_kelas.max'=>'maksimal 45 kata',
+            'pengajar_id.required'=>'Wajib Diisi',
+            'pengajar_id.max'=>'maksimal 11 angka',
+            'peserta_id.required'=>'Wajib Diisi',
+            'peserta_id.max'=>'maksimal 11 angka',
+            'kelas.required'=>'Wajib Diisi',
+            'kelas.max'=>'maksimal 45 kata',
         ]);
         $jadwal = jadwal::find($id);
         $jadwal->pengajar_id = $request->pengajar_id;
@@ -151,7 +209,7 @@ class jadwalController extends Controller
     }
 
     public function jadwalPDF(){
-        $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+        $jadwal = DB::table('penjadwalan_kelas')
                 ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
                 ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
                 ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
@@ -164,7 +222,7 @@ class jadwalController extends Controller
     }
 
     public function jadwal_pengajar(){
-        $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+        $jadwal = DB::table('penjadwalan_kelas')
         ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
         ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
         ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
@@ -175,7 +233,6 @@ class jadwalController extends Controller
         $materi = Materi::all();
         $pdf = PDF::loadView('admin.jadwal.pengajar.Jadwal',['jadwal'=>$jadwal,'materi'=>$materi]);
        return $pdf->download('Jadwal.pdf');
-
     }
     public function suratTugas(string $id){
         $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
@@ -217,7 +274,5 @@ class jadwalController extends Controller
        return $pdf->download('Surat-tugas_all.pdf');
 
     }
-
-
-    
+   
 }
