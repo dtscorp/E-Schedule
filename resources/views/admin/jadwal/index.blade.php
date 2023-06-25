@@ -79,16 +79,20 @@
                         <td class="border-bottom-0">{{$data->jam_keluar}}</td>
 
                         @php
-                        if(now() < $data->tgl_mulai)
+                        if(now() < $data->tgl_mulai){
                             $status = 'Akan dimulai';
-                          elseif(now()->between($data->tgl_mulai,$data->tgl_akhir))
+                            $bg = 'bg-warning';
+                          }elseif(now()->between($data->tgl_mulai,$data->tgl_akhir)){
                             $status = 'Sedang Berlangsung';
-                          else
+                            $bg = 'bg-success';
+                        }else{
                             $status = 'Telah Berakhir';
+                            $bg = 'bg-danger';
+                        }
                         @endphp
 
                         <td class="border-bottom-0">
-                        <span class="badge {{ ($status == 'Sedang Berlangsung')? 'bg-success' : 'bg-danger' }} rounded-3 fw-semibold">{{$status}}</span>
+                        <span class="badge {{ $bg }} rounded-3 fw-semibold">{{$status}}</span>
                         </td>
                         <td>
                         <a id='continer-view' href="{{route('jadwal.show',$data->id)}}" class="btn">
