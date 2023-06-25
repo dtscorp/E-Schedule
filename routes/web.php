@@ -3,7 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\materiController;
-use App\Http\Controllers\PengajarController;
+use App\Http\Controllers\pengajarController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\kelasController;
 use App\Http\Controllers\LandingPageController;
