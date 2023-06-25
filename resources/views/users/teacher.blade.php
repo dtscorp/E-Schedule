@@ -17,7 +17,7 @@
                       <img src="{{asset('admin/assets/images')}}/{{$data->foto}}" class="card-img-top" style="width : 100%; height : 100%" alt="{{$data->foto}}">
                       @endempty
           <h4>{{$data->nama}}</h4>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+          <p>{{$data->desk}}</p>
           <a href="#">read more</a>
 
         </div>

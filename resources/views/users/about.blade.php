@@ -18,10 +18,11 @@
         </p>
 
         <ul class="list-unstyled">
-          <li><i class="vi bi-chevron-right"></i>Frontend Academic</li>
-          <li><i class="vi bi-chevron-right"></i>Digital Marketing Academy</li>
-          <li><i class="vi bi-chevron-right"></i>Academic Data Scientist</li>
+          @foreach($kelas as $data)
+          <li><i class="vi bi-chevron-right"></i>{{$data->nama}}</li>
+          @endforeach
         </ul>
+        
 
       </div>
     </div>
