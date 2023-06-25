@@ -94,7 +94,7 @@
           <li class="sidebar-item">
             <a id='container-sidLink' class="sidebar-link" href="{{route('user.index')}}" aria-expanded="false">
               <span>
-              <i class="fa-solid fa-users"></i>
+              <i class="bi bi-person-fill-add"></i>
               </span>
               <span id='container-SPP' class="hide-menu">User Management</span>
             </a>

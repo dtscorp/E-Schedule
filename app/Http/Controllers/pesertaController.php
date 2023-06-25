@@ -5,15 +5,23 @@ use App\Models\Peserta;
 use PHPUnit\Framework\TestSize\Known;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class pesertaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $peserta = Peserta::all();
+        if($request->has('search')){
+            $peserta = Peserta::where('nama', 'LIKE', '%' .$request->search.'%')->paginate(5);
+            Session::put('halaman_url', request()->fullUrl());
+        }else{
+            $peserta = Peserta::paginate(5);
+            Session::put('halaman_url', request()->fullUrl());
+        }
+        //$peserta = Peserta::all();
         return view('admin.peserta.index', compact('peserta'));
     }
 
@@ -36,7 +44,7 @@ class pesertaController extends Controller
             'telp' => 'required|max:15|min:10',
             'email' => 'required|max:45|unique:peserta',
             'alamat' => 'required',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:500'
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:280'
         ],
         //custom pesan errornya
         [
@@ -66,20 +74,25 @@ class pesertaController extends Controller
             $fileName = '';
         }
 
-        DB::table('peserta')->insert(
-            [
-                'nama' => $request->nama,
-                'gender' => $request->gender,
-                'telp' => $request->telp,
-                'email' => $request->email,
-                'alamat' => $request->alamat,
-                //'foto' => 'required'
-                'foto' => $fileName
-            ]
-        );
+        try{
+            DB::table('peserta')->insert(
+                [
+                    'nama' => $request->nama,
+                    'gender' => $request->gender,
+                    'telp' => $request->telp,
+                    'email' => $request->email,
+                    'alamat' => $request->alamat,
+                    //'foto' => 'required'
+                    'foto' => $fileName
+                ]);
 
-        return redirect()->route('peserta.index')
-                        ->with('success','Data peserta Baru Berhasil Disimpan');
+            return redirect()->route('peserta.index')
+                            ->with('success','New Participant Data Saved Successfully');
+        }
+        catch(\Exception $e){
+            return redirect()->route('peserta.index')
+                            ->with('Error', 'So An Error When Inputting Data!');
+        }
     }
 
     /**
@@ -112,7 +125,7 @@ class pesertaController extends Controller
             'email' => 'required|max:45',
             'alamat' => 'required',
             //'foto' => 'required'
-            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:500'
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|min:2|max:280'
         ],
         //custom pesan errornya
         [
@@ -144,28 +157,29 @@ class pesertaController extends Controller
             $fileName = $namaFileFotoLama;
         }
 
-        DB::table('peserta')->where('id', $id)->update(
-            [
-                'nama' => $request->nama,
-                'gender' => $request->gender,
-                'telp' => $request->telp,
-                'email' => $request->email,
-                'alamat' => $request->alamat,
-                //'foto' => 'required'
-                'foto' => $fileName
-            ]
-        );
-        
-        //$peserta = Peserta::find($id);
-        //$peserta->nama = $request->nama;
-        //$peserta->gender = $request->gender;
-        //$peserta->telp = $request->telp;
-        //$peserta->email = $request->email;
-        //$peserta->alamat = $request->alamat;
-        //$peserta->foto = $request->foto;
-        //$peserta->save();
-        return redirect()->route('peserta.index')
-        ->with('success','Data Peserta Baru Berhasil Disimpan');
+        try{
+            DB::table('peserta')->where('id', $id)->update(
+                [
+                    'nama' => $request->nama,
+                    'gender' => $request->gender,
+                    'telp' => $request->telp,
+                    'email' => $request->email,
+                    'alamat' => $request->alamat,
+                    //'foto' => 'required'
+                    'foto' => $fileName
+                ]);
+
+                if(session('halaman_url')){
+                    return Redirect(session('halaman_url'))->with('success','Update Participant Data Saved Successfully');
+                }
+
+            return redirect()->route('peserta.index')
+                            ->with('success','Update Participant Data Saved Successfully');
+        }
+        catch(\Exception $e){
+            return redirect()->route('peserta.index')
+                            ->with('Error', 'So An Error When Inputting Data!');
+        };
     }
 
     /**

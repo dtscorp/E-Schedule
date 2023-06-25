@@ -21,7 +21,7 @@
               @empty(Auth::user()->foto)
                     <img src="{{asset('admin/assets/images/nophoto.jpg')}}" width="35" height="35" class="rounded-circle">
                     @else
-                    <img src="{{asset('admin/assets/images/profile/Auth::user()->foto') }}" width="35" height="35" class="rounded-circle" alt="">
+                    <img src="asset('admin/assets/images/profile/Auth::user()->foto') }}" width="35" height="35" class="rounded-circle" alt="{{$data->foto}}">
                     @endempty
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
@@ -39,14 +39,14 @@
                   <p class="mb-0 fs-3">My Task</p>
                 </a>
                 <a class="btn btn-outline-primary mx-3 mt-2 d-block" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                  onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+                  </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
               </div>
             </div>
           </li>

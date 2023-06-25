@@ -16,17 +16,35 @@ class LandingPageController extends Controller
         return view('users.hero',compact('kelas'));
 
     }
-    public function teacher(){
-        $pengajar = Pengajar::all();
-        return view('users.teacher', compact('pengajar'));
+    public function about(){
+        $kelas = Kelas::all();
+        return view('users.about',compact('kelas'));
 
     }
+    public function contact(){
+        $kelas = Kelas::all();
+        return view('users.contact',compact('kelas'));
+
+    }
+    public function team(){
+        $kelas = Kelas::all();
+        return view('users.team',compact('kelas'));
+
+    }
+    public function teacher(){
+        $pengajar = Pengajar::all();
+        $kelas = Kelas::all();
+        return view('users.teacher', compact('pengajar','kelas'));
+
+    }
+    
     public function kelas(){
         $materi = Materi::all();
         $kelas = Kelas::all();
         return view('users.kelas',compact('kelas','materi'));
     }
     public function jadwal(){
+        $kelas = Kelas::all();
         if(empty(Auth::user()->role_access)){
             $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
             ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
@@ -60,7 +78,7 @@ class LandingPageController extends Controller
             ->get();
         }
       
-        return view('users.schedule', compact('jadwal'));
+        return view('users.schedule', compact('jadwal','kelas'));
     }
     public function show_class(string $id){
         $materi = Materi::all();

@@ -28,6 +28,9 @@ use GuzzleHttp\Middleware;
 // ======================= Layout =======================
 
 Route::get('/',[LandingPageController::class,'hero']);
+Route::get('/about',[LandingPageController::class,'about']);
+Route::get('/contact',[LandingPageController::class,'contact']);
+Route::get('/team',[LandingPageController::class,'team']);
 Route::get('/teacher',[LandingPageController::class,'teacher']);
 Route::get('/class',[LandingPageController::class,'kelas']);
 Route::get('/schedule',[LandingPageController::class,'jadwal']);
@@ -46,19 +49,9 @@ Route::get('/login', function () {
     return view('admin.login');
 });
 
-Route::get('/about', function () {
-    return view('users.about');
-});
 
 
-Route::get('/team', function () {
-    return view('users.team');
-});
 
-
-Route::get('/contact', function () {
-    return view('users.contact');
-});
 
 
 Route::get('/regist_success', function () {
@@ -93,8 +86,6 @@ Route::post('kirim', [KirimEmailController::class, 'kirim']) ->middleware('auth'
 Route::get('/access-denied', function () {
     return view('access_denied');
 })->middleware('auth');
-
-
 
 Auth::routes();
 

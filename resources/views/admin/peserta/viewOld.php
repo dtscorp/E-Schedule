@@ -6,10 +6,10 @@
 
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-            @empty($peserta->foto)
+            @empty($pesert->foto)
             <img id='ghhh-img' src="{{url('admin/assets/images/')}}" class="card-img-top">
             @else
-              <img id='ghhh-img' src="{{url('admin/assets/images/')}}/{{$peserta->foto}}" class="card-img-top">
+              <img id='ghhh-img' src="{{url('admin/assets/images/')}}/{{$pesert->foto}}" class="card-img-top">
             @endempty
             </div>
           </div>
@@ -34,27 +34,27 @@
 
                   <div class="row">
                     <div id="psrta-dta" class="col-lg-3 col-md-4 label ">Name</div>
-                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $peserta->nama }}</div>
+                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $pesert->nama }}</div>
                   </div>
 
                   <div class="row">
                     <div id="psrta-dta" class="col-lg-3 col-md-4 label ">Gender</div>
-                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $peserta->gender }}</div>
+                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $pesert->gender }}</div>
                   </div>
 
                   <div class="row">
                     <div id="psrta-dta" class="col-lg-3 col-md-4 label">telp</div>
-                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $peserta->telp }}</div>
+                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $pesert->telp }}</div>
                   </div>
 
 				  <div class="row">
                     <div id="psrta-dta" class="col-lg-3 col-md-4 label">E-Mail</div>
-                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $peserta->email }}</div>
+                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $pesert->email }}</div>
                   </div>
 
 				  <div class="row">
                     <div id="psrta-dta" class="col-lg-3 col-md-4 label">Alamat</div>
-                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $peserta->alamat }}</div>
+                    <div id="psrta-dta" class="col-lg-9 col-md-8"> : {{ $pesert->alamat }}</div>
                   </div>
 
                 </div>

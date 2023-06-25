@@ -1,17 +1,8 @@
 @extends('admin.layout.index')
 @section('content')
-<!-- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif -->
 
 <div class="container px-5 my-5">
-<h2 id='creH2'>Form Edit Peserta</h2>
+<h2 id='creH21'>Form Edit Peserta</h2>
     <form id="contactForm" method="POST" action="{{route('peserta.update',$peserta->id)}}" enctype="multipart/form-data" data-sb-form-api-token="API_TOKEN">
     @csrf
     @method('PUT')
@@ -27,13 +18,8 @@
         <div class="mb-3">
             <label id="gender" class="form-label d-block">gender</label>
             <div class="form-check form-check-inline">
-            @if($peserta->gender == 'L')
-            <input class="@error('gender') is-invalid @enderror" name="gender" value="L" id="gender" type="radio" placeholder="gender" data-sb-validations="required" checked/> L <br>
-            <input class="@error('gender') is-invalid @enderror" name="gender" value="P" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> P
-            @else
-            <input class="@error('gender') is-invalid @enderror" name="gender" value="L" id="gender" type="radio" placeholder="gender" data-sb-validations="required" /> L <br>
-            <input class="@error('gender') is-invalid @enderror" name="gender" value="P" id="gender" type="radio" placeholder="gender" data-sb-validations="required" checked/> P
-            @endif
+            <input id='inp-gender' class="@error('gender') is-invalid @enderror" name="gender" value="L" {{$peserta->gender == "L"?'checked': ''}} type="radio" placeholder="gender" data-sb-validations="required" /> L 
+            <input id='inp-gender' class="@error('gender') is-invalid @enderror" name="gender" value="P" {{$peserta->gender == "P"?'checked': ''}} type="radio" placeholder="gender" data-sb-validations="required" /> P
             @error('gender')
             <div id="validationServer03Feedback" class="invalid-feedback">
                 {{$message}}
@@ -77,9 +63,9 @@
             </div>
             @enderror
         </div>
-            <button  value='update' name='proses' class="btn btn-success " id="submitButton" type="submit">Update</button>
+            <button id='tbn-prst1' value='update' name='proses' class="btn btn-success btn-lg" id="update" type="submit">Save</button>
             <input type="hidden" name="id" value="{{ $peserta->id }}"/>
-           <a href="{{ url('/peserta') }}" class="btn btn-warning ">Batal</a>
+           <a href="{{ url('/peserta') }}" id='tbn-ccncl1' class="btn btn-warning btn-lg">Batal</a>
     </form>
 </div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

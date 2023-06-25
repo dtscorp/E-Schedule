@@ -125,7 +125,7 @@ class jadwalController extends Controller
     }
     public function show(string $id){
         
-        $jml = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+        $jml = DB::table('penjadwalan_kelas')
         ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
         ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
         ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
@@ -134,7 +134,7 @@ class jadwalController extends Controller
         ->groupBy('penjadwalan_kelas.kelas')->orderBy('penjadwalan_kelas.kelas', 'desc')
         ->get();
 
-        $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+        $jadwal = DB::table('penjadwalan_kelas')
         ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
         ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
         ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
@@ -235,7 +235,7 @@ class jadwalController extends Controller
        return $pdf->download('Jadwal.pdf');
     }
     public function suratTugas(string $id){
-        $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+        $jadwal = DB::table('penjadwalan_kelas')
         ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
         ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
         ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
@@ -243,7 +243,7 @@ class jadwalController extends Controller
         ->where('penjadwalan_kelas.id','=', $id)
         ->orderBy('penjadwalan_kelas.kelas', 'desc')
         ->get();
-        $jml = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+        $jml = DB::table('penjadwalan_kelas')
         ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
         ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
         ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
@@ -261,7 +261,7 @@ class jadwalController extends Controller
 
     }
     public function suratTugasAll(){
-        $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
+        $jadwal = DB::table('penjadwalan_kelas')
         ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
         ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
         ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
