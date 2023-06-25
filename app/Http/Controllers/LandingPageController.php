@@ -26,12 +26,18 @@ class LandingPageController extends Controller
         return view('users.contact',compact('kelas'));
 
     }
+    public function team(){
+        $kelas = Kelas::all();
+        return view('users.team',compact('kelas'));
+
+    }
     public function teacher(){
         $pengajar = Pengajar::all();
         $kelas = Kelas::all();
         return view('users.teacher', compact('pengajar','kelas'));
 
     }
+    
     public function kelas(){
         $materi = Materi::all();
         $kelas = Kelas::all();

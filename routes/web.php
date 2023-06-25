@@ -30,6 +30,7 @@ use GuzzleHttp\Middleware;
 Route::get('/',[LandingPageController::class,'hero']);
 Route::get('/about',[LandingPageController::class,'about']);
 Route::get('/contact',[LandingPageController::class,'contact']);
+Route::get('/team',[LandingPageController::class,'team']);
 Route::get('/teacher',[LandingPageController::class,'teacher']);
 Route::get('/class',[LandingPageController::class,'kelas']);
 Route::get('/schedule',[LandingPageController::class,'jadwal']);
@@ -47,9 +48,7 @@ Route::get('/users', function () {
 Route::get('/login', function () {
     return view('admin.login');
 });
-Route::get('/team', function () {
-    return view('users.team');
-});
+
 
 
 
