@@ -15,11 +15,21 @@
         @csrf
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Kode Kelas</label>
-        <input type="text" name="kode_kelas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <select class="form-control" name="kode_kelas" id="kelas">
+                <option value="">Kode Kelas</option>
+                @foreach($kelas as $data)
+                <option value="{{$data->kode_kelas}}">{{$data->kode_kelas}}</option>
+                @endforeach
+            </select>
     </div>
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Kelas</label>
-        <input type="text" name="kelas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label for="exampleInputEmail1" class="form-label">Kelas</label>
+          <select class="form-control" name="kelas" id="kelas">
+            <option value="">Kelas</option>
+            @foreach($kelas as $data)
+            <option value="{{$data->nama}}">{{$data->nama}}</option>
+            @endforeach
+          </select>
     </div>
     <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Peserta</label>

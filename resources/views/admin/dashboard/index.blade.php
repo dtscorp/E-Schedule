@@ -3,10 +3,15 @@
 @if(Auth::user()->role_access == 'peserta')
 @include('access_denied')
 @endif
-<!--  Row 1 -->
-<div class="row">
-  <div class="col-lg-8 d-flex align-items-strech">
-    <h1>Hallo</h1>
-    </div>
+<!--  Row 1 -->     
+ <div class="container-fluid">
+     @include('admin.dashboard.table_count') 
+     <div class="card">
+     <div class="card-body"> 
+    @include('admin.dashboard.table_jadwal_run')
+     
+    @include('admin.dashboard.table_jadwal_pen')
+     </div>
+     </div>
 </div>
 @endsection

@@ -24,7 +24,7 @@
                     @endforeach
                 </ul>
                 <div class="table_btn">
-                  <a href="#" class="btn"><i class="bi bi-eye"></i>details</a>
+                  <a href="#" class="btn"><i class="bi bi-eye"></i>Detail</a>
                 </div>
               </div>
             </div>
@@ -33,6 +33,5 @@
         </div>
         </div>
       </div>
-    </section>
 @endsection
 </div>

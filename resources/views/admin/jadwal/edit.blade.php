@@ -15,13 +15,28 @@
     @csrf
     @method('PUT')
     <div class="mb-3">
-
         <label for="exampleInputEmail1" class="form-label">Kode Kelas</label>
-        <input type="text" name="kode_kelas" value="{{$jadwal->kode_kelas}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <select class="form-control" name="kode_kelas" id="kelas">
+                <option value="">Kode Kelas</option>
+                @foreach($kelas as $data)
+                    @if($data->kode_kelas == $jadwal->kode_kelas)
+                    <option value="{{$data->kode_kelas}}" selected>{{$data->kode_kelas}}</option>
+                    @endif
+                    <option value="{{$data->kode_kelas}}">{{$data->kode_kelas}}</option>
+                @endforeach
+            </select>
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Kelas</label>
-        <input type="text" name="kelas" value="{{$jadwal->kelas}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <select class="form-control" name="kelas" id="kelas">
+                <option value="">Kode Kelas</option>
+                @foreach($kelas as $data)
+                    @if($data->nama == $jadwal->kelas)
+                    <option value="{{$data->nama}}" selected>{{$data->nama}}</option>
+                    @endif
+                    <option value="{{$data->nama}}">{{$data->nama}}</option>
+                @endforeach
+            </select>
     </div>
     <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Peserta</label>

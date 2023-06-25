@@ -55,7 +55,8 @@
             @endforeach
           </select>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="{{ url('/materi') }}" class="btn btn-warning">Batal</a>
     </form>
 </div>
 </div>

@@ -8,7 +8,7 @@
 
                 <a id='container-CratPeserta' href="{{route('peserta.create')}}" class="btn">Tambah Data</a>
 
-              <div id="seac-container" class="row g-3 align-items-center">
+                <div id="seac-container" class="row g-3 align-items-center">
                 <div id="search" class="col-auto">
                   <form action="/peserta" method="GET">
                       <input type="search" name="search" class="form-control" placeholder="Search">

@@ -63,6 +63,7 @@
 
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{{ url('/materi') }}" class="btn btn-warning">Batal</a>
     </form>
 </div>
 </div>

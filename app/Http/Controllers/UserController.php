@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index(){
         $user = User::all();
         return view('admin.user.index', compact('user'));
-    }   
+    }
     public function create()
     {
         $pengajar = Pengajar::all();
@@ -133,11 +133,11 @@ class UserController extends Controller
         //------------apakah user  ingin ubah upload foto baru-----------
         if (!empty($request->foto)) {
             //jika ada foto lama, hapus foto lamanya terlebih dahulu
-            if (!empty($namaFileFotoLama)) unlink('admin/assets/images/profile' . $namaFileFotoLama);
+            if (!empty($namaFileFotoLama)) unlink('admin/assets/images/profile/' . $namaFileFotoLama);
             //lalukan proses ubah foto lama menjadi foto baru
             $fileName = 'user_' . $request->email . '.' . $request->foto->extension();
             //$fileName = $request->foto->getClientOriginalName();
-            $request->foto->move(public_path('admin/assets/images/profile'), $fileName);
+            $request->foto->move(public_path('admin/assets/images/profile/'), $fileName);
         } else {
             $fileName = $namaFileFotoLama;
         }

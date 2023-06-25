@@ -51,7 +51,7 @@
 
                   <h5 id='container-HH5cLogin' class="fw-normal mb-3 pb-3">Sign into your account</h5>
                   <div class="form-outline mb-4">
-                  <input id="id_card" type="id_card" class="form-control form-control-lg @error('id_card') is-invalid @enderror" placeholder="NIP/NIK" name="id_card" value="{{ old('id_card') }}" required autocomplete="id_card" autofocus>
+                  <input id="id_card" type="id_card" class="form-control @error('id_card') is-invalid @enderror" placeholder="NIP/NIK" name="id_card" value="{{ old('id_card') }}" required autocomplete="id_card" autofocus>
                     @error('id_card')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
                   </div>
 
                   <div class="form-outline mb-4">
-                  <input id="name" type="name" class="form-control form-control-lg @error('name') is-invalid @enderror" placeholder="Nama Lengkap" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                  <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama Lengkap" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -69,7 +69,7 @@
                   </div>
 
                   <div class="form-outline mb-4">
-                  <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -79,14 +79,14 @@
 
                   <div class="form-outline mb-4">
                   <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password" autofocus>
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                   </div>
                   <div class="form-outline mb-4">
-                  <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" autofocus>
+                  <input id="password-confirm" type="password" class="form-control"  name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" autofocus>
                   </div>
 
                   <div class="pt-1 mb-4">

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('peserta_id');
             $table->rememberToken();
             $table->timestamps();
+            $table->enum();
         });
     }
 
