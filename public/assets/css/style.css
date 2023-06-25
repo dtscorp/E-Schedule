@@ -140,16 +140,18 @@ span {
 
 #header #logo h1 {
   color: #505050;
-  font-size: 26px;
   font-weight: bold;
   font-family: monospace;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
-}
+  margin-top: -13px;
+} 
 
 #header #logo h1 a {
+  position: relative;
   color: #555;
+  font-size: 26px;
   display: inline-block;
   text-decoration: none;
   cursor: grabbing;
@@ -729,8 +731,11 @@ section {
 /* About Us Section
 --------------------------------*/
 #about-us img {
-  max-width: 100%;
+  max-width: 200%;
   cursor: no-drop;
+  margin-top: 100px;
+  margin-left: -250px;
+
 }
 
 #about-us .about-content {
@@ -979,7 +984,7 @@ section {
 #team .team-block .team-content ul>span {
   display: inline-block;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: bold;
   letter-spacing: 0.5px;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -1540,16 +1545,70 @@ section {
   margin-top: -6px;
 }
 
+#container-TeM12{
+  background-position: center;
+  background-image: url(../img/newsletter-bg.jpg);
+  cursor: grabbing;
+  margin-top: -70px;
+}
+
+#container-TeM13{
+  background-position: center;
+  background-image: url(../img/newsletter-bg.jpg);
+  cursor: grabbing;
+  margin-top: -20px;
+}
+
+#container-Te2M1{
+  background-position: center;
+  background-image: url(../img/newsletter-bg.jpg);
+  cursor: grabbing;
+}
+
 #container-TeM5{
   margin-top: -16px;
   background-color: #18d26e;
   cursor: grabbing;
 }
 
-.container-spa{
+#plsssk{
+  margin-top: 10px;
+}
+
+.container-spsa{
+  color: #777;
+  font-size: 15px;
   font-family: 'Roboto';
   font-weight: bold;
   cursor: grabbing;
+  text-align: center;
+}
+
+.container-spa{
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  cursor: grabbing;
+  text-align: center;
+}
+
+.lssss{
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  cursor: grabbing;
+  text-transform: uppercase;
+}
+
+.container-spann{
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  cursor: grabbing;
+  text-transform: uppercase;
 }
 
 .container-HH4{
@@ -1585,7 +1644,7 @@ section {
   font-weight: bold;
   text-transform: uppercase;
   cursor: grabbing;
-  transition: color 2s ease-out 100ms;
+  transition: color 10s ease-out 100ms;
 }
 
 #container-schd:hover{
@@ -1597,7 +1656,7 @@ section {
   font-size: 12px;
   font-family: 'Roboto';
   font-weight: bold;
-  transition: color 2s ease-out 100ms;
+  transition: color 10s ease-out 100ms;
   cursor: grabbing;
 }
 
@@ -1634,7 +1693,7 @@ section {
   cursor: no-drop;
 }
 
-#username::placeholder{
+#username, input::placeholder{
   font-size: 10px;
   font-family: 'Roboto';
   color: #025464;
@@ -1646,6 +1705,22 @@ section {
   font-size: 10px;
   font-family: 'Roboto';
   color: #025464;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#password-confirm::placeholder{
+  font-size: 10px;
+  font-family: 'Roboto';
+  color: #025464;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#container-APRegis, a{
+  cursor: grabbing;
+  font-size: 12px;
+  font-family: 'Roboto';
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -1666,6 +1741,23 @@ section {
   color: #f5fbf3;
 }
 
+#btnrgisss{
+  background-color: #025464;
+  color: #f5fbf3;
+  font-size: 12px;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: grabbing;
+  float: right;
+  transition: background-color 6s ease-out 100ms;
+}
+
+#btnrgisss:hover{
+  background-color: #18d26e;
+  color: #f5fbf3;
+}
+
 #container-spLogin{
   color: #777;
   font-size: 30px;
@@ -1673,10 +1765,34 @@ section {
   font-weight: bold;
   text-transform: uppercase;
   cursor: grabbing;
+  transition: color 5s ease-out 100ms;
+}
+
+#container-spLogin:hover{
+  color: #18d26e;
 }
 
 #container-APLogin{
   color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+}
+
+#container-APRegggs{
+  margin-top: 10px;
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: grabbing;
+}
+
+.contair{
+  color: #18d26e;
   font-size: 12px;
   font-family: 'Roboto';
   font-weight: bold;
@@ -1713,4 +1829,60 @@ section {
 
 #container-DFTeam{
   margin-top: -60px;
+}
+
+#div-div{
+  position: relative;
+  margin-top: -100px;
+  cursor: grabbing;
+}
+
+#div-KL{
+  color: #777;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+#lmmmm{
+  margin-top: 10px;
+  float: right;
+}
+
+#lmmmm, button{
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#llaaaa{
+  margin-top: -20px;
+}
+
+.lkksa{
+  color: #777;
+  font-size: 11px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.dataTable-top {
+  padding: 0 0 10px 0;
+}
+
+.dataTable-bottom {
+  padding: 10px 0 0 0;
 }

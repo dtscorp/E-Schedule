@@ -77,6 +77,7 @@
                         <td class="border-bottom-0">{{$data->tgl_akhir}}</td>
                         <td class="border-bottom-0">{{$data->jam_masuk}}</td>
                         <td class="border-bottom-0">{{$data->jam_keluar}}</td>
+
                         @php
                         if(now() < $data->tgl_mulai)
                             $status = 'Akan dimulai';

@@ -1,4 +1,6 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -27,72 +29,47 @@
   <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 
 </head>
+
 <body>
 
 <section id='container-secLogin' class="vh-100">
-  <div id="llaaaa" class="container py-5 h-100">
-    <div id="lass" class="row d-flex justify-content-center align-items-center h-100">
-      <div id="ssss" class="col col-xl-10">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
         <div id='container-cardsss' class="card">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
               <img id='container-ImgLogin' src="{{url('assets/img/hero.png')}}"
                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
             </div>
-
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-              <form method="POST" action="{{route('register')}}">
-                      @csrf
+
+                <form>
+
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-solid fa-calendar-days fa-2x me-3" style="color: #18d26e;"></i>
                     <span id='container-spLogin' class="h1 fw-bold mb-0">E-Sceduler</span>
                   </div>
 
                   <h5 id='container-HH5cLogin' class="fw-normal mb-3 pb-3">Sign into your account</h5>
+
                   <div class="form-outline mb-4">
-                  <input id="id_card" type="id_card" class="form-control @error('id_card') is-invalid @enderror" placeholder="NIP/NIK" name="id_card" value="{{ old('id_card') }}" required autocomplete="id_card" autofocus>
-                    @error('id_card')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <input type="email" id="username" class="form-control form-control-lg" placeholder="Username" />
                   </div>
 
                   <div class="form-outline mb-4">
-                  <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama Lengkap" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                    @error('name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                  </div>
-
-                  <div class="form-outline mb-4">
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                  </div>
-
-                  <div class="form-outline mb-4">
-                  <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password" autofocus>
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                  </div>
-                  <div class="form-outline mb-4">
-                  <input id="password-confirm" type="password" class="form-control"  name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" autofocus>
+                    <input type="password" id="password" class="form-control form-control-lg" placeholder="Password" />
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <button id='btnrgisss' class="btn btn-dark btn-lg btn-block" type="submit">{{ __('register') }}</button>
-                    <p id='container-APRegggs' class="mb-5 pb-lg-2">have an account yet? <a class="contair" href="{{ route('login') }}">{{ __('Login Here') }}</a></p>
+                    <button id='btnLogin' class="btn btn-dark btn-lg btn-block" type="button">Login</button>
                   </div>
+
+                  <a id='container-APLogin' class="small text-muted" href="#">Forgot password?</a>
+                  <p id='container-APLogin' class="mb-5 pb-lg-2">Don't have an account? <a id='container-APRegis' class="regiss" href="#">Register here</a></p>
+                  <a id='container-APLogin' href="#" class="small text-muted">Terms of use.</a>
+                  <a id='container-APLogin' href="#" class="small text-muted">Privacy policy</a>
                 </form>
 
               </div>
@@ -103,7 +80,8 @@
     </div>
   </div>
 </section>
-</div>
+
+  <!-- ======= Vendor JS Files ======= -->
   <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
   <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>

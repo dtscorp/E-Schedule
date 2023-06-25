@@ -1,7 +1,7 @@
 @extends('users.layout.index')
 @section('content')
-<section id="contact" class="padd-section">
 
+<section id="contact" class="padd-section">
 <div class="container" data-aos="fade-up">
   <div class="section-title text-center">
     <h2>Contact</h2>
@@ -52,8 +52,8 @@
           </div>
           <div class="form-group mt-3">
             <textarea class="form-control" name="komentar" rows="5" placeholder="Message" required></textarea>
-          </div
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          </div>
+          <div id="lmmmm" class="text-center"><button type="submit">Send Message</button></div>
         </form>
       </div>
     </div>

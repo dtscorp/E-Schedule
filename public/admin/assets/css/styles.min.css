@@ -16,7 +16,6 @@
     font-weight: bold;
     /* text-transform: uppercase; */
     cursor: grabbing;
-    margin-top: 50px;
  }
 
  #container-pengajarH5{
@@ -68,7 +67,6 @@
     color: #fff;
     cursor: grabbing;
     background-position: center;
-    float: right;
     cursor: grabbing;
  }
 
@@ -103,20 +101,38 @@
     font-size: 12px;
     font-family: 'Roboto';
     font-weight: bold;
-    /* text-transform: uppercase; */
+    /* text-transform: uppercase;*/
     margin-top: 10px;
     cursor: grabbing;
  }
 
  #container-THHH{
+    position: relative;
     color: #777;
     font-size: 12px;
     font-family: 'Roboto';
     font-weight: bold;
     /* text-transform: uppercase; */
     text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
     cursor: grabbing;
  }
+
+#container-THHH1{
+    position: relative;
+    color: #777;
+    font-size: 12px;
+    font-family: 'Roboto';
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    cursor: grabbing;
+}
 
  #container-dlete{
     background-color: #F45050;
@@ -254,7 +270,37 @@
 }
 
 #tbn-prst{
-   margin-left: 434px;
+   margin-left: 466px;
+   color: #fff;
+   font-size: 12px;
+   font-family: 'Roboto';
+   font-weight: bold;
+   cursor: grabbing;
+   /* text-transform: uppercase; */
+}
+
+#tbn-kels{
+   margin-left: 460px;
+   color: #fff;
+   font-size: 12px;
+   font-family: 'Roboto';
+   font-weight: bold;
+   cursor: grabbing;
+   /* text-transform: uppercase; */
+}
+
+#tbn-mtri11{
+   margin-left: 460px;
+   color: #fff;
+   font-size: 12px;
+   font-family: 'Roboto';
+   font-weight: bold;
+   cursor: grabbing;
+   /* text-transform: uppercase; */
+}
+
+#tbn-kelsEdit{
+   margin-left: 472px;
    color: #fff;
    font-size: 12px;
    font-family: 'Roboto';
@@ -277,8 +323,20 @@
    color: #fff;
 }
 
+#tbn-goback{
+   position: absolute;
+   color: #fff;
+   font-size: 12px;
+   font-family: 'Roboto';
+   font-weight: bold;
+   cursor: grabbing;
+   /* text-transform: uppercase; */
+   margin-left: 572px;
+   margin-top: 50px;
+}
+
 #tbn-prst1{
-   margin-left: 466px;
+   margin-left: 482px;
    color: #fff;
    font-size: 12px;
    font-family: 'Roboto';
@@ -320,6 +378,16 @@
    cursor: grabbing;
    text-align: center;
    /* text-transform: uppercase; */
+}
+
+#creH21{
+   color: #777;
+   font-size: 26px;
+   font-family: 'Roboto';
+   font-weight: bold;
+   margin-top: -20px;
+   cursor: grabbing;
+   text-align: center;
 }
 
 #gender{
@@ -366,6 +434,8 @@
 
 #container-viewss img{
    cursor: no-drop;
+   position: relative;
+   max-width: 50%;
 }
 
 #container-viewss a{
@@ -378,6 +448,50 @@
    /* text-transform: uppercase; */
    font-weight: bold;
    font-size: 11px;
+}
+
+#psrta-dta{
+   position: relative;
+   color: #777;
+   font-family: 'Roboto';
+   font-weight: bold;
+   font-size: 15px;
+   margin-top: 10px;
+   top: 10px;
+   cursor: grabbing;
+}
+
+#psrta-dtaa{
+   position: relative;
+   color: #777;
+   font-family: 'Roboto';
+   font-weight: bold;
+   font-size: 16px;
+   /* text-transform: uppercase; */
+   margin-top: 10px;
+   cursor: grabbing;
+}
+
+#psrta-dtaaa{
+   position: relative;
+   color: #777;
+   font-family: 'Roboto';
+   font-weight: bold;
+   font-size: 13px;
+   /* text-transform: uppercase; */
+   cursor: grabbing;
+}
+
+#ghhh-img{
+   position: relative;
+   cursor: no-drop;
+   width: 200px;
+   height: 200px;
+   object-fit: cover;
+   text-align: center;
+   align-items: center;
+   align-self: center;
+   align-content: center;
 }
 
 #cont9-Pesert{
@@ -399,7 +513,7 @@
    font-size: 12px;
    font-family: 'Roboto';
    font-weight: bold;
-   text-transform: uppercase;
+   /* text-transform: uppercase; */
    cursor: grabbing;
 }
 
@@ -408,7 +522,7 @@
    font-size: 14px;
    font-family: 'Roboto';
    font-weight: bold;
-   text-transform: uppercase;
+   /* text-transform: uppercase; */
    cursor: grabbing;
    transition: color 5s ease-out 100ms;
 }
@@ -422,4 +536,49 @@
    font-family: 'Roboto';
    font-weight: bold;
    cursor: grabbing;
+}
+
+#search, input::placeholder{
+   color: #777;
+   font-family: 'Roboto';
+   font-weight: bold;
+   cursor: grabbing;
+   /* text-transform: uppercase; */
+   font-size: 12px;
+}
+
+#slct-matr{
+   color: #777;
+   font-family: 'Roboto';
+   font-weight: bold;
+   cursor: grabbing;
+   /* text-transform: uppercase; */
+   font-size: 12px;
+}
+
+#seac-container{
+   position: relative;
+   margin-left: 800px;
+   padding-top: 10px;
+}
+
+#icons-pnjad{
+   cursor: grabbing;
+   margin-left: 840px;
+}
+
+#icons-pnjad1{
+   cursor: grabbing;
+}
+
+#icons-pnjad2{
+   cursor: grabbing;
+}
+
+#pagane{
+   margin-left: 850px;
+   font-family: 'Roboto';
+   font-weight: bold;
+   cursor: grabbing;
+   /* text-transform: uppercase; */
 }

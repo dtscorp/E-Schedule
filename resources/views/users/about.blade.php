@@ -1,12 +1,13 @@
 @extends('users.layout.index')
 @section('content')
+
 <!-- ======= About Us Section ======= -->
 <section id="about-us" class="about-us padd-section">
 <div class="container" data-aos="fade-up">
   <div class="row justify-content-center">
 
     <div class="col-md-5 col-lg-3">
-      <img src="assets/img/about-img.png" alt="About" data-aos="zoom-in" data-aos-delay="100">
+      <img id="imscde" src="{{url('assets/img/schedule.png')}}" alt="About" data-aos="zoom-in" data-aos-delay="100">
     </div>
 
     <div class="col-md-7 col-lg-5">
@@ -17,11 +18,9 @@
         </p>
 
         <ul class="list-unstyled">
-          <li><i class="vi bi-chevron-right"></i>Matematika</li>
-          <li><i class="vi bi-chevron-right"></i>Bahasa Indonesia</li>
-          <li><i class="vi bi-chevron-right"></i>Bahasa Inggris</li>
-          <li><i class="vi bi-chevron-right"></i>Fisika</li>
-          <li><i class="vi bi-chevron-right"></i>Biologi</li>
+          <li><i class="vi bi-chevron-right"></i>Frontend Academic</li>
+          <li><i class="vi bi-chevron-right"></i>Digital Marketing Academy</li>
+          <li><i class="vi bi-chevron-right"></i>Academic Data Scientist</li>
         </ul>
 
       </div>

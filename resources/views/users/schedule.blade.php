@@ -1,5 +1,6 @@
 @extends('users.layout.index')
 @section('content')
+
 <div class="container" data-aos="fade-up">
 
   <div class="section-title text-center">
@@ -71,6 +72,7 @@
                   </table>
                 </div>
   </div>
+  
 </div>
 
 @endsection
