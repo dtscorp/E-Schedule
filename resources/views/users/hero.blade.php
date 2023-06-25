@@ -9,7 +9,7 @@
       <a href="{{url('/about')}}" class="btn-get-started scrollto">Get Started</a>
       <div class="btns">
         @foreach($kelas as $data)
-        <a href="#"><i class="fa fa-apple fa-3x"></i>{{$data->nama}}</a>
+        <a href="{{url('/show_class',$data->id)}}"><i class="fa fa-apple fa-3x"></i>{{$data->nama}}</a>
         @endforeach
       </div>
     </div>

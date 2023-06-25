@@ -17,35 +17,6 @@ use Dompdf\Dompdf;
 
 class jadwalController extends Controller
 {
-    /**
-     *Display a listing of the resource.
-     */
-
-    // public function index()
-    // {
-    //     $jadwal_P = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
-    //     ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
-    //     ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
-    //     ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
-    //     ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar',DB::raw('COUNT(peserta_id) as peserta'))
-    //     ->where('penjadwalan_kelas.pengajar_id', '=',Auth::user()->pengajar_id)
-    //     ->groupBy('penjadwalan_kelas.kelas')->orderBy('penjadwalan_kelas.kelas', 'desc')
-    //     ->get();
-
-    //     $jadwal = \Illuminate\Support\Facades\DB::table('penjadwalan_kelas')
-    //     ->join('materi', 'materi.id', '=', 'penjadwalan_kelas.materi_id')
-    //     ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
-    //     ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
-    //     ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar','peserta.nama as peserta')
-    //     ->orderBy('penjadwalan_kelas.kelas', 'desc')
-    //     ->get();
-    //     $materi = Materi::all();
-    //     if(Auth::user()->role_access == 'admin'){
-    //         return view('admin.jadwal.index', compact('jadwal','materi','jadwal_P'));
-    //     }else{
-    //         return view('admin.jadwal.pengajar.index', compact('jadwal','materi','jadwal_P'));
-    //     }
-
     public function index(Request $request)
 {
     $query = DB::table('penjadwalan_kelas')

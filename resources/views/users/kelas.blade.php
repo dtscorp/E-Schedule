@@ -24,14 +24,13 @@
                     @endforeach
                 </ul>
                 <div class="table_btn">
-                  <a href="#" class="btn"><i class="bi bi-eye"></i>Detail</a>
+                  <a href="{{url('/show_class',$k->id)}}" class="btn"><i class="bi bi-eye"></i>Detail</a>
                 </div>
               </div>
             </div>
           </div>
           @endforeach
         </div>
+  </section>
         </div>
-      </div>
 @endsection
-</div>

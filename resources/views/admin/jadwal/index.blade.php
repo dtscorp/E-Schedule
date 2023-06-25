@@ -11,11 +11,6 @@
                 <a href="{{url('jadwal-PDF')}}" class="btn btn-success">Cetak Jadwal<i class="ti ti-printer"></i></a>
                 <br>
                 <br>
-                @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                <p>{{ $message }}</p>
-                </div>
-                @endif  
         <form action="/jadwal" method="GET" class="mb-3">
             <div class="input-group">
                 <input type="search" name="search" class="form-control" placeholder="Cari...">

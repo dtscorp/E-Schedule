@@ -12,7 +12,7 @@
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/about')}}">About</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/team')}}">Team</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/teacher')}}">Teacher</a></li>  
-          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/class')}}">classroom</a></li>
+          <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/class')}}">class</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/schedule')}}">schedule</a></li>
           <li><a id='container-HIDA' class="nav-link scrollto" href="{{url('/contact')}}">Contact</a></li>
           @guest

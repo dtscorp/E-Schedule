@@ -74,7 +74,7 @@ class LandingPageController extends Controller
             ->join('peserta', 'peserta.id', '=', 'penjadwalan_kelas.peserta_id')
             ->join('pengajar', 'pengajar.id', '=', 'penjadwalan_kelas.pengajar_id')
             ->select('penjadwalan_kelas.*', 'materi.nama as materi','pengajar.nama as pengajar','peserta.nama as peserta')
-            ->orderBy('penjadwalan_kelas.id', 'desc')->where('penjadwalan_kelas.pengajar_id','=',Auth::user()->peserta_id)
+            ->orderBy('penjadwalan_kelas.id', 'desc')->where('penjadwalan_kelas.peserta_id','=',Auth::user()->peserta_id)
             ->get();
         }
       
@@ -82,7 +82,8 @@ class LandingPageController extends Controller
     }
     public function show_class(string $id){
         $materi = Materi::all();
-        $kelas = Kelas::find($id);
-        return view('users.detail_kelas',compact('kelas','materi'));
+        $kelas_detail = Kelas::find($id);
+        $kelas = Kelas::all();
+        return view('users.detail_kelas',compact('kelas_detail','kelas','materi'));
     }
 }

@@ -1,6 +1,5 @@
 <?php
 use App\Http\Controllers\Api\KelasController;
-use App\Http\Controllers\apiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\penjadwalController;

@@ -61,7 +61,7 @@
                         <td id='container-THHH1' class="border-bottom-0">{{$dbpeserta->alamat}}</td>
                         <td id='container-LLL' class="border-bottom-0">
                         @empty($dbpeserta->foto)
-                          <img src="{{url('admin/assets/images/')}}">
+                          <img src="{{url('admin/assets/images/nophoto.jpg')}}">
                         @else
                           <img src="{{url('admin/assets/images')}}/{{$dbpeserta->foto}}">
                         @endempty

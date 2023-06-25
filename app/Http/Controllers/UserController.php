@@ -162,7 +162,7 @@ class UserController extends Controller
     {
          //sebelum hapus data, hapus terlebih dahulu fisik file fotonya jika ada
          $user = user::find($id);
-         if (!empty($user->foto)) unlink('admin/assets/images/' . $user->foto);
+         if (!empty($user->foto)) unlink('admin/assets/images/profile/' . $user->foto);
          //hapus data di database
          User::where('id', $id)->delete();
          return redirect()->route('user.index')
